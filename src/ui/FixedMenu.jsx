@@ -1,5 +1,15 @@
 import { NavLink } from "react-router-dom";
 
+import { PiReadCvLogo, PiProjectorScreen } from "react-icons/pi";
+import {
+  HiOutlineHome,
+  HiOutlineShoppingCart,
+  HiOutlineNewspaper,
+  HiOutlineBookOpen,
+  HiOutlinePhone,
+  HiOutlineUserGroup,
+} from "react-icons/hi2";
+
 function FixedMenu({ isMenuOpen }) {
   return (
     <div
@@ -12,30 +22,54 @@ function FixedMenu({ isMenuOpen }) {
           Sign In
         </button>
 
-        <ul className="space-y-4 w-full w-full">
+        <ul className="space-y-4 w-full">
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" className="flex gap-1 items-center">
+              <HiOutlineHome />
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/market">Market</NavLink>
+            <NavLink to="/market" className="flex gap-1 items-center">
+              <HiOutlineShoppingCart />
+              Market
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/freelancer">Freelancer</NavLink>
+            <NavLink to="/freelancer" className="flex gap-1 items-center">
+              <HiOutlineUserGroup />
+              Freelancer
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/blog">Blog</NavLink>
+            <NavLink to="/blog" className="flex gap-1 items-center">
+              <HiOutlineNewspaper />
+              Blog
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/educations">Educations</NavLink>
+            <NavLink to="/educations" className="flex gap-1 items-center">
+              <HiOutlineBookOpen />
+              Educations
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/projects">Projects</NavLink>
+            <NavLink to="/projects" className="flex gap-1 items-center">
+              <PiProjectorScreen />
+              Projects
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/resume">Resume</NavLink>
+            <NavLink to="/resume" className="flex gap-1 items-center">
+              <PiReadCvLogo />
+              Resume
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/contact-us">Contact Us</NavLink>
+            <NavLink to="/contact-us" className="flex gap-1 items-center">
+              <HiOutlinePhone />
+              Contact Us
+            </NavLink>
           </li>
         </ul>
       </div>

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 function Navbar() {
   return (
     <nav className="m-auto ml-12">
-      <ul className="hidden md:flex space-x-4 [&>li]:m-auto">
+      <ul className="hidden md:flex space-x-8 [&>li]:m-auto">
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
