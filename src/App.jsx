@@ -1,16 +1,21 @@
-import "./output.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./ui/Home";
-import Header from "./ui/Header";
+import Home from "./pages/Home";
+import AppLayout from "./ui/AppLayout";
+import FreeLancers from "./features/freelancers/FreeLancers";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/menu",
-    element: <Header />,
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/Freelancer",
+        element: <FreeLancers />,
+      },
+    ],
   },
 ]);
 
