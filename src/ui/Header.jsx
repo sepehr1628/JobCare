@@ -1,13 +1,30 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import FixedMenu from "./FixedMenu";
 import Logo from "./Logo";
 import Navbar from "./Navbar";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const myRef = useRef();
+
+  const handleCloseMenu = (e) => {
+    console.log(myRef);
+    if (myRef.current && !myRef.current.contains(e.target)) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  useEffect(function () {
+    document.addEventListener("click", handleCloseMenu);
+
+    return () => document.removeEventListener("click", handleCloseMenu);
+  }, []);
 
   return (
-    <header className="flex justify-between bg-inherit items-center py-2 px-4 md:px-16 absolute top-0 left-0 right-0">
+    <header
+      ref={myRef}
+      className="flex justify-between bg-inherit items-center py-2 px-4 md:px-24 absolute top-0 left-0 right-0"
+    >
       <div className="flex justify-between w-3/4">
         <Logo />
         <Navbar />

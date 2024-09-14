@@ -5,7 +5,7 @@ function Navbar() {
     <nav className="m-auto ml-12">
       <ul className="hidden md:flex space-x-8 [&>li]:m-auto">
         <li>
-          <NavLink to="/" className="[.active]:font-semibold">
+          <NavLink to="/" className="[&:.active]:font-semibold">
             Home
           </NavLink>
         </li>
