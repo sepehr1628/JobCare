@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 function AppLayout() {
   return (
-    <div className="">
+    <div className="overflow-x-hidden">
       <Header />
       <main>
         <Outlet />

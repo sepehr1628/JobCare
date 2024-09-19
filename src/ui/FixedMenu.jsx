@@ -18,7 +18,7 @@ function FixedMenu({ isMenuOpen }) {
       }`}
     >
       <div>
-        <button className="bg-[#1F69DC] py-2 px-8 rounded-3xl my-2">
+        <button className="bg-[#1F69DC] py-2 px-6 rounded-3xl my-2">
           Sign In
         </button>
 

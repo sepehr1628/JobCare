@@ -3,34 +3,44 @@ import FixedMenu from "./FixedMenu";
 import Logo from "./Logo";
 import Navbar from "./Navbar";
 
+import { HiOutlineShoppingCart } from "react-icons/hi";
+
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const myRef = useRef();
 
   const handleCloseMenu = (e) => {
-    console.log(myRef);
     if (myRef.current && !myRef.current.contains(e.target)) {
       setIsMenuOpen(false);
     }
   };
 
-  useEffect(function () {
-    document.addEventListener("click", handleCloseMenu);
+  useEffect(
+    function () {
+      document.addEventListener("click", handleCloseMenu);
 
-    return () => document.removeEventListener("click", handleCloseMenu);
-  }, []);
+      return () => document.removeEventListener("click", handleCloseMenu);
+    },
+    [isMenuOpen]
+  );
 
   return (
     <header
       ref={myRef}
-      className="flex justify-between bg-inherit items-center py-2 px-4 md:px-24 absolute top-0 left-0 right-0"
+      className="flex justify-between bg-inherit items-center py-2 px-4 md:px-24 absolute top-0 left-0 right-0 z-10"
     >
-      <div className="flex justify-between w-3/4">
+      <div className="flex justify-between">
         <Logo />
         <Navbar />
       </div>
-      <div>
-        <button className="hidden md:block">Sign In</button>
+      <div className="flex items-center space-x-6">
+        <button className="text-blue-900 hidden md:flex items-center gap-2 py-2 px-8 text-slate-50 rounded-3xl my-2">
+          <HiOutlineShoppingCart className="text-xl" />
+          Cart
+        </button>
+        <button className="hidden md:block bg-[#1F69DC] py-2 px-8 text-slate-50 rounded-3xl my-2">
+          Sign In
+        </button>
       </div>
       <FixedMenu isMenuOpen={isMenuOpen} />
 
