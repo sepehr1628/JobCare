@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import FixedMenu from "./FixedMenu";
 import Logo from "./Logo";
 import Navbar from "./Navbar";
+// import Overlay from "./Overlay";
 
 import { HiOutlineShoppingCart } from "react-icons/hi";
 
@@ -29,12 +30,13 @@ function Header() {
       ref={myRef}
       className="flex justify-between bg-inherit items-center py-2 px-4 md:px-24 absolute top-0 left-0 right-0 z-10"
     >
+      {/* {isMenuOpen && <Overlay />} */}
       <div className="flex justify-between">
         <Logo />
         <Navbar />
       </div>
       <div className="flex items-center space-x-6">
-        <button className="text-blue-900 hidden md:flex items-center gap-2 py-2 px-8 text-slate-50 rounded-3xl my-2">
+        <button className="text-blue-900 hidden md:flex items-center gap-2 py-2 px-8 rounded-3xl my-2">
           <HiOutlineShoppingCart className="text-xl" />
           Cart
         </button>
