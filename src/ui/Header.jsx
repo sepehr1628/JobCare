@@ -6,10 +6,9 @@ import Navbar from "./Navbar";
 
 import { HiOutlineShoppingCart } from "react-icons/hi";
 
-function Header() {
+function Header({ type }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const myRef = useRef();
-
   const handleCloseMenu = (e) => {
     if (myRef.current && !myRef.current.contains(e.target)) {
       setIsMenuOpen(false);
@@ -28,7 +27,9 @@ function Header() {
   return (
     <header
       ref={myRef}
-      className="flex justify-between bg-inherit items-center py-2 px-4 md:px-24 absolute top-0 left-0 right-0 z-10"
+      className={`flex justify-between bg-inherit items-center p-4 md:px-24 ${
+        type && "absolute top-0 left-0 right-0"
+      } z-10`}
     >
       {/* {isMenuOpen && <Overlay />} */}
       <div className="flex justify-between">

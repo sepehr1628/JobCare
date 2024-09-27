@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      backgroundImage: {
+        breadcrumb: "url(./assets/Images/breadcrumb-bg.png)",
+      },
       colors: {
         black: "#000",
         "gray-900": "#3A4246",
@@ -17,6 +20,7 @@ export default {
         md: "768px",
         xlg: "992px",
         lg: "1024px",
+        xl: "1200px",
       },
       boxShadow: {
         "3xl": "0px -2px 700px 0px rgba(0,0,0,0.75)",

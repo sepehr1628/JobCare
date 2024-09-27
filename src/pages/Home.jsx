@@ -1,3 +1,4 @@
+import { useLocation } from "react-router";
 import CVSection from "../ui/sections/CVSection";
 import FindSection from "../ui/sections/FindSection";
 import HighestFreelancerSection from "../ui/sections/HighestFreelancerSection";

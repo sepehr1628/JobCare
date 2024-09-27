@@ -81,7 +81,7 @@ function HeroSection() {
           <img
             src="./../../assets/Images/image 14.png"
             alt="The guy finds job in JobCare"
-            className="w-4/5"
+            className="xl:w-4/5"
           />
         </div>
       </div>

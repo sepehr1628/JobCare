@@ -1,7 +1,7 @@
 import Logo from "./Logo";
 
 import { FaLocationDot } from "react-icons/fa6";
-import { HiOutlinePhone } from "react-icons/hi2";
+import { HiPhone } from "react-icons/hi2";
 
 function Footer() {
   return (
@@ -81,7 +81,7 @@ function Footer() {
             Iran, Tehran, East
           </li>
           <li>
-            <HiOutlinePhone />
+            <HiPhone className="text-white" />
             +989050902112
           </li>
           <li>Sepehr1628@gmail.com</li>

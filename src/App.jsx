@@ -1,9 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import AppLayout from "./ui/AppLayout";
-import FreeLancers from "./features/freelancers/FreeLancers";
 import Market from "./pages/Market";
 import NotFound from "./ui/NotFound";
+import ProductDetail from "./features/products/ProductDetail";
+import Freelancers from "./pages/Freelancers";
 
 const router = createBrowserRouter([
   {
@@ -18,14 +19,18 @@ const router = createBrowserRouter([
         element: <Market />,
       },
       {
-        path: "/freelancer",
-        element: <FreeLancers />,
+        path: "/market/:productName",
+        element: <ProductDetail />,
       },
       {
-        path: "*",
-        element: <NotFound />,
+        path: "/freelancer",
+        element: <Freelancers />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 
