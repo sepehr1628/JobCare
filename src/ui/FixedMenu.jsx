@@ -13,12 +13,12 @@ import {
 function FixedMenu({ isMenuOpen }) {
   return (
     <div
-      className={`flex flex-col justify-between md:hidden transition duration-300 w-1/2 bg-[#C6D2D2] pt-20 pb-4 px-4 sm:w-1/3 h-full fixed top-0 left-0 ${
+      className={`flex flex-col justify-between md:hidden transition duration-300 w-1/2 bg-gray z-20 pt-20 pb-4 px-6 sm:w-1/3 h-full fixed top-0 left-0 ${
         !isMenuOpen ? "-translate-x-full" : "translate-x-0 shadow-3xl"
       }`}
     >
       <div>
-        <button className="bg-[#1F69DC] py-2 px-8 rounded-3xl my-2">
+        <button className="bg-[#1F69DC] py-2 px-6 rounded-full mb-4">
           Sign In
         </button>
 
