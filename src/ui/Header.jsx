@@ -40,7 +40,7 @@ function Header() {
           <HiOutlineShoppingCart className="text-xl" />
           Cart
         </button>
-        <button className="hidden md:block bg-[#1F69DC] py-2 px-8 text-slate-50 rounded-3xl my-2">
+        <button className="hidden md:block bg-[#1F69DC] py-2 transition-all duration-300 hover:px-12 px-8 text-slate-50 rounded-3xl my-2">
           Sign In
         </button>
       </div>

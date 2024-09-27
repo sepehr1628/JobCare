@@ -22,7 +22,7 @@ function CVSection() {
         />
       </div>
       <div className="md:p-8 flex flex-col justify-evenly items-start gap-2 lg:gap-5 xlg:w-7/12">
-        <h2 className="text-2xl md:3xl lg:text-5xl font-medium leading-tight text-start">
+        <h2 className="text-2xl md:3xl lg:text-[2.7rem] font-medium leading-tight text-start">
           put your CV in front of the great for employers to see
         </h2>
         <p className="text-justify">
@@ -38,7 +38,7 @@ function CVSection() {
             </span>
           )}
         </p>
-        <button className="bg-blue text-white mt-4 md:m-0 px-3 py-2 md:px-4 lg:py-3 rounded-full flex gap-2 items-center">
+        <button className="bg-blue text-white transition-all duration-300 hover:px-12 mt-4 md:m-0 px-3 py-1 md:px-10 lg:py-2 rounded-full border border-blue border-solid hover:bg-white hover:text-blue flex gap-2 items-center">
           Create Your CV <HiArrowNarrowRight />
         </button>
       </div>

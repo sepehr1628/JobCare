@@ -10,7 +10,7 @@ function HeroSection() {
             "radial-gradient(circle, rgba(147,184,235,1) 28%, rgba(198,210,210,1) 59%)",
         }}
       ></div>
-      <div className="md:w-1/2 md:pt-20 flex flex-col md:justify-start md:items-start">
+      <div className="md:w-1/2 md:pt-20 flex flex-col md:justify-start md:items-start z-[1]">
         <div className="md:flex md:flex-col md:w-[30rem]">
           <h2 className="text-5xl xlg:text-[4rem] leading-tight md:leading-tight font-medium text-center md:text-start mb-6 font-sans ">
             Find every job <br />
@@ -44,29 +44,38 @@ function HeroSection() {
 
       <div className="hidden sm:w-1/2 xlg:flex xlg:justify-end xlg:items-end relative">
         <div className="w-1/3 relative h-[28rem]">
-          <span className="hidden lg:flex justify-center items-center w-9 h-9 absolute rounded-full bg-white top-16 left-0">
+          <a
+            href="https://www.linkedin.com/in/sepehr-mohammadpour/"
+            className="hidden lg:flex justify-center items-center w-9 h-9 absolute rounded-full bg-white top-16 left-0"
+          >
             <img
               src="./../../assets/Images/linkedin-logo.png"
               alt="JobCare LinkedIn"
               className="h-3/5 w-3/5 rounded"
             />
-          </span>
+          </a>
 
-          <span className="hidden lg:flex justify-center items-center w-9 h-9 absolute rounded-full bg-white top-48 right-0">
+          <a
+            href="https://t.me/sergraay"
+            className="hidden lg:flex justify-center items-center w-9 h-9 absolute rounded-full bg-white top-48 right-0"
+          >
             <img
               src="./../../assets/Images/telegram-logo.png"
               alt="JobCare Telegram"
               className="h-3/5 w-3/5 rounded"
             />
-          </span>
+          </a>
 
-          <span className="hidden lg:flex justify-center items-center w-9 h-9 absolute rounded-full bg-white top-80 inset-x-1/2">
+          <a
+            href="https://github.com/sepehr1628"
+            className="hidden lg:flex justify-center items-center w-9 h-9 absolute rounded-full bg-white top-80 inset-x-1/2"
+          >
             <img
               src="./../../assets/Images/github-logo.png"
               alt="JobCare Github"
               className="h-3/5 w-3/5 rounded"
             />
-          </span>
+          </a>
         </div>
         <div className="w-2/3 flex justify-center">
           <img

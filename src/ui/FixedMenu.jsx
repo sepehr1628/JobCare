@@ -13,7 +13,7 @@ import {
 function FixedMenu({ isMenuOpen }) {
   return (
     <div
-      className={`flex flex-col justify-between md:hidden transition duration-300 w-1/2 bg-[#C6D2D2] pt-20 pb-4 px-6 sm:w-1/3 h-full fixed top-0 left-0 ${
+      className={`flex flex-col justify-between md:hidden transition duration-300 w-1/2 bg-gray z-20 pt-20 pb-4 px-6 sm:w-1/3 h-full fixed top-0 left-0 ${
         !isMenuOpen ? "-translate-x-full" : "translate-x-0 shadow-3xl"
       }`}
     >

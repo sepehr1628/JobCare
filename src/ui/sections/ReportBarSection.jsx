@@ -1,6 +1,6 @@
 function ReportBarSection() {
   return (
-    <section className="bg-gray-900 flex flex-col gap-6 md:gap-0 md:flex-row items-center px-4 py-12 md:px-24">
+    <section className="bg-gray-900 flex flex-col gap-6 md:gap-0 md:flex-row items-center px-4 py-9 md:px-24">
       <h4 className="basis-1/3 text-3xl text-white p-4">
         People productivity performance
       </h4>

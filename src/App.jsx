@@ -2,6 +2,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import AppLayout from "./ui/AppLayout";
 import FreeLancers from "./features/freelancers/FreeLancers";
+import Market from "./pages/Market";
+import NotFound from "./ui/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -12,8 +14,16 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/Freelancer",
+        path: "/market",
+        element: <Market />,
+      },
+      {
+        path: "/freelancer",
         element: <FreeLancers />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },

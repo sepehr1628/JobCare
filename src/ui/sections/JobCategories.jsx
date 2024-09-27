@@ -6,9 +6,9 @@ function JobCategories() {
   return (
     <section className="px-4 py-12 md:px-24 mb-20">
       <div className="flex justify-between flex-wrap gap-4 items-center mb-12 sm:mb-24">
-        <h2 className="text-3xl font-bold">Browser by job categories</h2>
+        <h2 className="text-4xl font-bold">Browser by job categories</h2>
         <Link to="/" className="flex items-center gap-2 text-blue">
-          Browser all job <HiArrowNarrowRight />
+          Browse all jobs <HiArrowNarrowRight />
         </Link>
       </div>
       <div className="flex flex-wrap justify-between [&>div]:py-5 [&>div]:px-10 [&>div]:gap-3 gap-2 [&>div]:rounded-lg [&>div]:border [&>div]:border-gray [&>div]:bg-[#77818117] [&>div]:text-center [&>div]:min-w-72">
