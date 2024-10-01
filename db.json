@@ -1,0 +1,109 @@
+{
+  "laptops": [
+    {
+      "price": 100,
+      "imgURL": "./../../assets/Images/laptop1.jpg",
+      "name": "asus tuf",
+      "rate": 4.5,
+      "brand": "asus"
+    },
+    {
+      "price": 156,
+      "imgURL": "./../../assets/Images/laptop2.jpg",
+      "name": "hp victus 15",
+      "rate": 5,
+      "brand": "hp"
+    },
+    {
+      "price": 523,
+      "imgURL": "./../../assets/Images/laptop3.jpg",
+      "name": "asus hp victus 16",
+      "rate": 4.7,
+      "brand": "asus"
+    },
+    {
+      "price": 390,
+      "imgURL": "./../../assets/Images/laptop4.jpg",
+      "name": "asus tuf gaming 2000",
+      "rate": 4,
+      "brand": "asus"
+    },
+    {
+      "price": 850,
+      "imgURL": "./../../assets/Images/laptop5.jpg",
+      "name": "zenbook pro 14 due oled (ux8402,11th gen intel)",
+      "rate": 4.1,
+      "brand": "asus"
+    },
+    {
+      "price": 666,
+      "imgURL": "./../../assets/Images/laptop6.jpg",
+      "name": "lenovo ",
+      "rate": 3.6,
+      "brand": "asus"
+    },
+    {
+      "price": 777,
+      "imgURL": "./../../assets/Images/laptop7.jpg",
+      "name": "asus tuf",
+      "rate": 3.9,
+      "brand": "asus"
+    },
+    {
+      "price": 999,
+      "imgURL": "./../../assets/Images/laptop8.jpg",
+      "name": "asus tuf",
+      "rate": 4.1,
+      "brand": "asus"
+    },
+    {
+      "price": 222,
+      "imgURL": "./../../assets/Images/laptop9.jpg",
+      "name": "asus tuf",
+      "rate": 3.9,
+      "brand": "asus"
+    },
+    {
+      "price": 333,
+      "imgURL": "./../../assets/Images/laptop10.jpg",
+      "name": "asus tuf",
+      "rate": 3,
+      "brand": "asus"
+    },
+    {
+      "price": 444,
+      "imgURL": "./../../assets/Images/laptop11.jpg",
+      "name": "asus tuf",
+      "rate": 3.3,
+      "brand": "asus"
+    },
+    {
+      "price": 111,
+      "imgURL": "./../../assets/Images/laptop12.jpg",
+      "name": "asus tuf",
+      "rate": 4.6,
+      "brand": "asus"
+    },
+    {
+      "price": 269,
+      "imgURL": "./../../assets/Images/laptop13.jpg",
+      "name": "asus tuf",
+      "rate": 5,
+      "brand": "asus"
+    },
+    {
+      "price": 555,
+      "imgURL": "./../../assets/Images/laptop14.jpg",
+      "name": "asus tuf",
+      "rate": 4.5,
+      "brand": "asus"
+    },
+    {
+      "price": 456,
+      "imgURL": "./../../assets/Images/laptop15.jpg",
+      "name": "asus tuf",
+      "rate": 4.8,
+      "brand": "asus"
+    }
+  ]
+}

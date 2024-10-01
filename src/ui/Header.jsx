@@ -5,15 +5,12 @@ import Navbar from "./Navbar";
 // import Overlay from "./Overlay";
 
 import { HiOutlineShoppingCart } from "react-icons/hi";
+import { useLocation } from "react-router";
 
 function Header({ type }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
   const myRef = useRef();
-  const handleCloseMenu = (e) => {
-    if (myRef.current && !myRef.current.contains(e.target)) {
-      setIsMenuOpen(false);
-    }
-  };
 
   useEffect(
     function () {
@@ -23,6 +20,19 @@ function Header({ type }) {
     },
     [isMenuOpen]
   );
+
+  useEffect(
+    function () {
+      setIsMenuOpen(false);
+    },
+    [location]
+  );
+
+  const handleCloseMenu = (e) => {
+    if (myRef.current && !myRef.current.contains(e.target)) {
+      setIsMenuOpen(false);
+    }
+  };
 
   return (
     <header
