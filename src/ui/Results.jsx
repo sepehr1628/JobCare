@@ -1,6 +1,6 @@
-// import ProductCard from "../features/products/ProductCard";
+import ProductCard from "../features/products/ProductCard";
 
-function Results({ setShowFilter }) {
+function Results({ setShowFilter, products }) {
   function handleClick() {
     setShowFilter((prev) => !prev);
   }
@@ -34,10 +34,10 @@ function Results({ setShowFilter }) {
         </div>
       </header>
       <div className="flex flex-col items-center xlg:grid xlg:grid-cols-3 xlg:grid-rows-3 gap-5 [&>div]:border [&>div]:border-solid [&>div]:border-gray-400 [&>div]:w-full [&>div]:rounded-md">
-        {/* {filteredData &&
-          filteredData.map((product) => (
+        {products &&
+          products.map((product) => (
             <ProductCard product={product} key={product.price} />
-          ))} */}
+          ))}
       </div>
     </div>
   );

@@ -1,6 +1,8 @@
-import { useLocation, useNavigate } from "react-router";
+import { useState } from "react";
+import { useNavigate } from "react-router";
 
-function Filter({ showFilter, filters, setFilters }) {
+function Filter({ showFilter, filters, setFilters, setGetURL, getURL }) {
+  const [priceRange, setPriceRange] = useState();
   const navigate = useNavigate();
 
   const handleBrandChange = (e) => {
@@ -13,19 +15,18 @@ function Filter({ showFilter, filters, setFilters }) {
     }));
   };
 
-  let searchParams = new URLSearchParams();
   function handleSubmit(e) {
     e.preventDefault();
-    if (filters.apple) searchParams.append("brand", "apple");
-    if (filters.asus) searchParams.append("brand", "asus");
-    if (filters.acer) searchParams.append("brand", "acer");
-    if (filters.hp) searchParams.append("brand", "hp");
-    if (filters.lenovo) searchParams.append("brand", "lenovo");
-    navigate({
-      pathname: window.location.pathname,
-      search: searchParams.toString(),
-    });
-    console.log(searchParams);
+    let searchParams = new URLSearchParams();
+    if (priceRange) searchParams.push(`price_lt=${priceRange}`);
+    if (filters.brand.apple) searchParams.append("brand", "apple");
+    if (filters.brand.asus) searchParams.append("brand", "asus");
+    if (filters.brand.acer) searchParams.append("brand", "acer");
+    if (filters.brand.hp) searchParams.append("brand", "hp");
+    if (filters.brand.lenovo) searchParams.append("brand", "lenovo");
+    const url = `?${searchParams.toString()}`;
+    setGetURL(url);
+    navigate(url);
   }
   return (
     <aside
@@ -152,6 +153,7 @@ function Filter({ showFilter, filters, setFilters }) {
         <div>
           <p className="mb-2 font-medium">Price Range</p>
           <input
+            onChange={(e) => setPriceRange(e.target.value)}
             type="range"
             name="price-range"
             className="w-full outline-none h-[0.35rem]"
@@ -161,8 +163,8 @@ function Filter({ showFilter, filters, setFilters }) {
         </div>
         <div className="flex justify-evenly">
           <button type="button">Delete</button>
+          <button type="submit">Filter</button>
         </div>
-        <button type="submit">Filter</button>
       </form>
     </aside>
   );

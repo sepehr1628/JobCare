@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import Filter from "../features/products/Filter";
 import BreadCrumb from "../ui/BreadCrumb";
 import Results from "../ui/Results";
-import { useLocation, useNavigate } from "react-router";
+import { useParams } from "react-router";
 
 function Market() {
   const [showFilter, setShowFilter] = useState(false);
+  const [getURL, setGetURL] = useState();
+  const [products, setProducts] = useState();
   const [filters, setFilters] = useState({
     brand: {
       apple: false,
@@ -28,13 +30,20 @@ function Market() {
     },
   });
 
-  useEffect(function () {
-    async function fetchProducts() {
-      const response = await fetch(`Http://localhost:5000/laptops`);
-      const data = await response.json();
-    }
-    fetchProducts();
-  }, []);
+  useEffect(
+    function () {
+      async function fetchProducts() {
+        const response = await fetch(
+          `Http://localhost:5000/laptops${getURL ? getURL : ""}`
+        );
+        const data = await response.json();
+        console.log(data);
+        setProducts(data);
+      }
+      fetchProducts();
+    },
+    [getURL]
+  );
 
   return (
     <section>
@@ -44,8 +53,10 @@ function Market() {
           showFilter={showFilter}
           filters={filters}
           setFilters={setFilters}
+          setGetURL={setGetURL}
+          getURL={getURL}
         />
-        <Results setShowFilter={setShowFilter} />
+        <Results setShowFilter={setShowFilter} products={products} />
       </div>
     </section>
   );
