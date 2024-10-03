@@ -37,9 +37,9 @@ function Header({ type }) {
   return (
     <header
       ref={myRef}
-      className={`flex justify-between bg-inherit items-center p-4 md:px-24 ${
+      className={`flex justify-between bg-inherit items-center p-4 md:px-24 z-10 ${
         type && "absolute top-0 left-0 right-0"
-      } z-10`}
+      }`}
     >
       {/* {isMenuOpen && <Overlay />} */}
       <div className="flex justify-between">
