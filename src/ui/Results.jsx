@@ -8,7 +8,8 @@ function Results({ setShowFilter, products }) {
   return (
     <div className="flex flex-col w-full col-span-4">
       <header className="flex flex-col gap-4 sm:flex-row justify-start items-start sm:justify-between mb-5">
-        <p>{"670 Results from 'Asus'"}</p>
+        {/* <p>{`${products.length} products found`}</p> */}
+        <p>1</p>
         <div className="flex flex-row-reverse sm:flex-row gap-4 xlg:gap-0 items-center">
           <select
             className="border-slate-300 border border-solid p-2 text-sm w-40 md:w-60 rounded-md focus:outline-none"
@@ -38,6 +39,8 @@ function Results({ setShowFilter, products }) {
           products.map((product) => (
             <ProductCard product={product} key={product.price} />
           ))}
+        {/* {products.length === 0 &&
+          "The products you're looking for is not available."} */}
       </div>
     </div>
   );

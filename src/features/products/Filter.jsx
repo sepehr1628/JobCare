@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
-function Filter({ showFilter, filters, setFilters, setGetURL, getURL }) {
+function Filter({ showFilter, filters, setFilters, setGetURL }) {
   const [priceRange, setPriceRange] = useState();
   const navigate = useNavigate();
 
@@ -18,15 +18,16 @@ function Filter({ showFilter, filters, setFilters, setGetURL, getURL }) {
   function handleSubmit(e) {
     e.preventDefault();
     let searchParams = new URLSearchParams();
-    if (priceRange) searchParams.push(`price_lt=${priceRange}`);
+    if (priceRange) searchParams.append("price", `${priceRange}`);
     if (filters.brand.apple) searchParams.append("brand", "apple");
     if (filters.brand.asus) searchParams.append("brand", "asus");
     if (filters.brand.acer) searchParams.append("brand", "acer");
     if (filters.brand.hp) searchParams.append("brand", "hp");
     if (filters.brand.lenovo) searchParams.append("brand", "lenovo");
     const url = `?${searchParams.toString()}`;
+    console.log(url);
     setGetURL(url);
-    navigate(url);
+    if (url !== window.location.search) navigate(url);
   }
   return (
     <aside
@@ -95,60 +96,6 @@ function Filter({ showFilter, filters, setFilters, setGetURL, getURL }) {
           </ul>
         </div>
 
-        {/* Proccessor */}
-        {/* <div>
-        <p className="mb-2 font-medium">Proccessor</p>
-        <ul className="[&>li]:flex flex xlg:flex-col gap-4 xlg:gap-1 flex-wrap [&>li]:gap-2">
-          <li>
-            <input type="checkbox" id="apple" />
-            <label htmlFor="apple">Apple</label>
-          </li>
-          <li>
-            <input type="checkbox" id="asus" />
-            <label htmlFor="asus">Asus</label>
-          </li>
-          <li>
-            <input type="checkbox" id="Hp" />
-            <label htmlFor="Hp">Hp</label>
-          </li>
-          <li>
-            <input type="checkbox" id="acer" />
-            <label htmlFor="acer">Acer</label>
-          </li>
-          <li>
-            <input type="checkbox" id="lenovo" />
-            <label htmlFor="lenovo">Lenovo</label>
-          </li>
-        </ul>
-      </div> */}
-
-        {/* Type */}
-        {/* <div>
-        <p className="mb-2 font-medium">Type</p>
-        <ul className="[&>li]:flex flex xlg:flex-col gap-4 xlg:gap-1 flex-wrap [&>li]:gap-2">
-          <li>
-            <input type="checkbox" id="apple" />
-            <label htmlFor="apple">Apple</label>
-          </li>
-          <li>
-            <input type="checkbox" id="asus" />
-            <label htmlFor="asus">Asus</label>
-          </li>
-          <li>
-            <input type="checkbox" id="Hp" />
-            <label htmlFor="Hp">Hp</label>
-          </li>
-          <li>
-            <input type="checkbox" id="acer" />
-            <label htmlFor="acer">Acer</label>
-          </li>
-          <li>
-            <input type="checkbox" id="lenovo" />
-            <label htmlFor="lenovo">Lenovo</label>
-          </li>
-        </ul>
-      </div> */}
-
         {/* Price range */}
         <div>
           <p className="mb-2 font-medium">Price Range</p>
@@ -171,25 +118,3 @@ function Filter({ showFilter, filters, setFilters, setGetURL, getURL }) {
 }
 
 export default Filter;
-
-// const [brands, setBrands] = useState({
-//   apple: false,
-//   lenovo: false,
-//   hp: false,
-//   asus: false,
-//   acer: false,
-// });
-// const handleBrandChange = (event) => {
-//   setBrands((prevBrands) => ({
-//     ...prevBrands,
-//     [event.target.name]: event.target.checked,
-//   }));
-// };
-
-// const filterProducts = () => {
-//   data.filter((product) => product.brand === brands.apple);
-// };
-
-// function handleDelete() {
-//   setFilteredProducts(null);
-// }

@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import Filter from "../features/products/Filter";
 import BreadCrumb from "../ui/BreadCrumb";
 import Results from "../ui/Results";
-import { useParams } from "react-router";
 
 function Market() {
   const [showFilter, setShowFilter] = useState(false);
-  const [getURL, setGetURL] = useState();
+  const [getURL, setGetURL] = useState(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    console.log(urlParams);
+    return urlParams.toString();
+  });
   const [products, setProducts] = useState();
   const [filters, setFilters] = useState({
     brand: {
@@ -30,19 +33,25 @@ function Market() {
     },
   });
 
+  useEffect(function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    console.log(urlParams);
+    setGetURL(`?${urlParams.toString()}`);
+  }, []);
+
   useEffect(
     function () {
       async function fetchProducts() {
+        const decodedGetURL = decodeURIComponent(getURL);
         const response = await fetch(
-          `Http://localhost:5000/laptops${getURL ? getURL : ""}`
+          `Http://localhost:5000/laptops${getURL && decodedGetURL}`
         );
         const data = await response.json();
-        console.log(data);
         setProducts(data);
       }
       fetchProducts();
     },
-    [getURL]
+    [getURL, setProducts]
   );
 
   return (
@@ -54,7 +63,6 @@ function Market() {
           filters={filters}
           setFilters={setFilters}
           setGetURL={setGetURL}
-          getURL={getURL}
         />
         <Results setShowFilter={setShowFilter} products={products} />
       </div>
