@@ -10,25 +10,10 @@ function Market() {
   const [showFilter, setShowFilter] = useState(false);
   const [page, setPage] = useState(1);
   const [products, setProducts] = useState();
-
-  // const getProducts = async (filter) => {
-  //   const { brand, type, category, priceRange, page } = filter;
-  //   try {
-  //     setLoading(true);
-  //     let params = `?_page=${page}&_limit=${PRODUCTPERPAGE}`;
-  //     if (brand) params += `&brand=${brand}`;
-  //     if (type) params += `&type=${type}`;
-  //     if (category) params += `&category=${category}`;
-  //     if (priceRange) params += `&priceRange=${priceRange}`;
-  //     const response = await fetch(`http://localhost:5000/products${params}`);
-  //     const data = await response.json();
-  //     setProducts(data);
-  //   } catch (error) {
-  //     console.error(error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+  const [priceRange, setPriceRange] = useState();
+  const [brand, setBrand] = useState("");
+  const [category, setCategory] = useState("");
+  const [type, setType] = useState("");
 
   const getProducts = async (filter) => {
     const { brand, type, category, priceRange } = filter;
@@ -58,16 +43,29 @@ function Market() {
   return (
     <section>
       <BreadCrumb />
+
       <div className="flex xlg:grid xlg:grid-cols-5 xlg:gap-5 px-8 md:px-24 my-10 md:my-24">
         <Filter
           loading={loading}
           showFilter={showFilter}
+          type={type}
+          brand={brand}
+          category={category}
+          priceRange={priceRange}
+          setType={setType}
+          setBrand={setBrand}
+          setCategory={setCategory}
+          setPriceRange={setPriceRange}
           onConfirm={(filter) => {
             console.log(filter);
             getProducts(filter);
           }}
         />
         <Results
+          type={type}
+          brand={brand}
+          category={category}
+          priceRange={priceRange}
           page={page}
           setPage={setPage}
           loading={loading}

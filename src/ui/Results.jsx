@@ -2,6 +2,9 @@ import ProductCard from "../features/products/ProductCard";
 import Spinner from "./Spinner";
 
 function Results({
+  type,
+  category,
+  brand,
   setPage,
   setShowFilter,
   page,
@@ -14,13 +17,13 @@ function Results({
   }
 
   function handleNextPage() {
-    setPage((prev) => ++prev);
-    onConfirm({ page });
+    setPage((cur) => cur + 1);
+    onConfirm({ page: page + 1, type, category, brand });
   }
 
   function handlePrevPage() {
-    setPage((prev) => prev - 1);
-    onConfirm({});
+    setPage((cur) => cur--);
+    onConfirm({ page: page - 1, type, category, brand });
   }
 
   return (
@@ -45,15 +48,16 @@ function Results({
           </span>
         </div>
       </header>
-      <div className="flex flex-col items-center xlg:grid xlg:grid-cols-3 xlg:grid-rows-4 gap-5 [&>div]:border [&>div]:border-solid [&>div]:border-gray-400 [&>div]:w-full [&>div]:rounded-md">
-        {loading && <Spinner />}
-        {products &&
-          products.map((product) => (
+      {loading && <Spinner />}
+      {products && (
+        <div className="flex flex-wrap items-center xlg:grid xlg:grid-cols-3 xlg:grid-rows-4 gap-5 [&>div]:border [&>div]:border-solid [&>div]:border-gray-400 [&>div]:w-full [&>div]:rounded-md">
+          {products.map((product) => (
             <ProductCard product={product} key={product.price} />
           ))}
-        {products?.length === 0 &&
-          "The products you're looking for is not available."}
-      </div>
+        </div>
+      )}
+      {products?.length === 0 &&
+        "The products you're looking for is not available."}
       {products?.length !== 0 && (
         <div className="flex justify-center items-center gap-2 p-3 [&>button]:bg-white [&>button]:text-blue [&>button]:transition-all [&>button]:duration-300 [&>button]:md:m-0 [&>button]:px-3 [&>button]:py-1 [&>button]:md:px-10 [&>button]:lg:py-2 [&>button]:rounded-full [&>button]:border [&>button]:m-auto [&>button]:border-blue [&>button]:border-solid [&>button]:flex [&>button]:items-center [&>button]:justify-center">
           <button

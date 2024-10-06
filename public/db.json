@@ -5,7 +5,7 @@
       "category": "shoes",
       "price": 5550,
       "imgURL": "./../../assets/Images/shoes3.jpg",
-      "name": "asus tuf",
+      "name": "Nike professional shoes for running",
       "rate": 4.5,
       "brand": "nike"
     },
@@ -14,7 +14,7 @@
       "category": "shoes",
       "price": 4560,
       "imgURL": "./../../assets/Images/shoes4.jpg",
-      "name": "asus tuf",
+      "name": "Nike shoes for beach walking",
       "rate": 4.8,
       "brand": "nike"
     },
@@ -23,7 +23,7 @@
       "category": "laptop",
       "price": 100,
       "imgURL": "./../../assets/Images/laptop1.jpg",
-      "name": "asus tuf",
+      "name": "Asus tuf gaming newface",
       "rate": 4.5,
       "brand": "asus"
     },
@@ -32,7 +32,7 @@
       "category": "shoes",
       "price": 2220,
       "imgURL": "./../../assets/Images/shoes2.jpg",
-      "name": "asus tuf",
+      "name": "hot and classy shoes",
       "rate": 3.9,
       "brand": "louisVuitton"
     },
@@ -41,7 +41,7 @@
       "category": "mobile",
       "price": 156,
       "imgURL": "./../../assets/Images/mobile.webp",
-      "name": "hp victus 15",
+      "name": "small and handy phone",
       "rate": 5,
       "brand": "hp"
     },
@@ -50,7 +50,7 @@
       "category": "sport",
       "price": 7770,
       "imgURL": "./../../assets/Images/sport2.jpg",
-      "name": "asus tuf",
+      "name": "best adidas sport wearing",
       "rate": 3.9,
       "brand": "adidas"
     },
@@ -59,7 +59,7 @@
       "category": "mobile",
       "price": 523,
       "imgURL": "./../../assets/Images/mobile1.jpg",
-      "name": "asus hp victus 16",
+      "name": "Asus new mobile phone for gaming",
       "rate": 4.7,
       "brand": "asus"
     },
@@ -68,7 +68,7 @@
       "category": "laptop",
       "price": 390,
       "imgURL": "./../../assets/Images/laptop4.jpg",
-      "name": "asus tuf gaming 2000",
+      "name": "black and red Asus laptop",
       "rate": 4,
       "brand": "asus"
     },
@@ -77,7 +77,7 @@
       "category": "dress",
       "price": 1000,
       "imgURL": "./../../assets/Images/dress1.jpg",
-      "name": "asus tuf",
+      "name": "Wear best clothes in meetings",
       "rate": 4.5,
       "brand": "dolceGabanna"
     },
@@ -265,6 +265,15 @@
       "type": "clothing",
       "category": "hangbag",
       "price": 9990,
+      "imgURL": "./../../assets/Images/bag2.jpg",
+      "name": "asus tuf",
+      "rate": 4.1,
+      "brand": "dolceGabanna"
+    },
+    {
+      "type": "clothing",
+      "category": "hangbag",
+      "price": 1122,
       "imgURL": "./../../assets/Images/bag2.jpg",
       "name": "asus tuf",
       "rate": 4.1,

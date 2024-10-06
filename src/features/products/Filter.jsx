@@ -1,11 +1,16 @@
-import { useState } from "react";
-
-function Filter({ loading, showFilter, onConfirm }) {
-  const [priceRange, setPriceRange] = useState();
-  const [brand, setBrand] = useState("");
-  const [category, setCategory] = useState("");
-  const [type, setType] = useState("");
-
+function Filter({
+  type,
+  setType,
+  brand,
+  setBrand,
+  category,
+  setCategory,
+  priceRange,
+  setPriceRange,
+  loading,
+  showFilter,
+  onConfirm,
+}) {
   function handleSubmit(e) {
     e.preventDefault();
     // console.log(priceRange);
