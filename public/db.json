@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "products": [
     {
       "type": "clothing",
@@ -24,10 +25,18 @@
       "price": 100,
       "imgURL": "./../../assets/Images/laptop1.jpg",
       "name": "Asus tuf gaming newface",
+=======
+  "laptops": [
+    {
+      "price": 100,
+      "imgURL": "./../../assets/Images/laptop1.jpg",
+      "name": "asus tuf",
+>>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
       "rate": 4.5,
       "brand": "asus"
     },
     {
+<<<<<<< HEAD
       "type": "clothing",
       "category": "shoes",
       "price": 2220,
@@ -42,10 +51,16 @@
       "price": 156,
       "imgURL": "./../../assets/Images/mobile.webp",
       "name": "small and handy phone",
+=======
+      "price": 156,
+      "imgURL": "./../../assets/Images/laptop2.jpg",
+      "name": "hp victus 15",
+>>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
       "rate": 5,
       "brand": "hp"
     },
     {
+<<<<<<< HEAD
       "type": "clothing",
       "category": "sport",
       "price": 7770,
@@ -60,19 +75,31 @@
       "price": 523,
       "imgURL": "./../../assets/Images/mobile1.jpg",
       "name": "Asus new mobile phone for gaming",
+=======
+      "price": 523,
+      "imgURL": "./../../assets/Images/laptop3.jpg",
+      "name": "asus hp victus 16",
+>>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
       "rate": 4.7,
       "brand": "asus"
     },
     {
+<<<<<<< HEAD
       "type": "technology",
       "category": "laptop",
       "price": 390,
       "imgURL": "./../../assets/Images/laptop4.jpg",
       "name": "black and red Asus laptop",
+=======
+      "price": 390,
+      "imgURL": "./../../assets/Images/laptop4.jpg",
+      "name": "asus tuf gaming 2000",
+>>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
       "rate": 4,
       "brand": "asus"
     },
     {
+<<<<<<< HEAD
       "type": "clothing",
       "category": "dress",
       "price": 1000,
@@ -93,6 +120,8 @@
     {
       "type": "technology",
       "category": "laptop",
+=======
+>>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
       "price": 850,
       "imgURL": "./../../assets/Images/laptop5.jpg",
       "name": "zenbook pro 14 due oled (ux8402,11th gen intel)",
@@ -100,6 +129,7 @@
       "brand": "asus"
     },
     {
+<<<<<<< HEAD
       "type": "clothing",
       "category": "shoes",
       "price": 3900,
@@ -111,6 +141,8 @@
     {
       "type": "technology",
       "category": "laptop",
+=======
+>>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
       "price": 666,
       "imgURL": "./../../assets/Images/laptop6.jpg",
       "name": "lenovo ",
@@ -118,6 +150,7 @@
       "brand": "asus"
     },
     {
+<<<<<<< HEAD
       "type": "clothing",
       "category": "dress",
       "price": 6660,
@@ -129,6 +162,8 @@
     {
       "type": "technology",
       "category": "laptop",
+=======
+>>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
       "price": 777,
       "imgURL": "./../../assets/Images/laptop7.jpg",
       "name": "asus tuf",
@@ -136,6 +171,7 @@
       "brand": "asus"
     },
     {
+<<<<<<< HEAD
       "type": "clothing",
       "category": "hat",
       "price": 3330,
@@ -147,6 +183,8 @@
     {
       "type": "technology",
       "category": "laptop",
+=======
+>>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
       "price": 999,
       "imgURL": "./../../assets/Images/laptop8.jpg",
       "name": "asus tuf",
@@ -154,6 +192,7 @@
       "brand": "asus"
     },
     {
+<<<<<<< HEAD
       "type": "clothing",
       "category": "dress",
       "price": 4440,
@@ -165,6 +204,8 @@
     {
       "type": "technology",
       "category": "laptop",
+=======
+>>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
       "price": 222,
       "imgURL": "./../../assets/Images/laptop9.jpg",
       "name": "asus tuf",
@@ -172,8 +213,11 @@
       "brand": "asus"
     },
     {
+<<<<<<< HEAD
       "type": "technology",
       "category": "laptop",
+=======
+>>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
       "price": 333,
       "imgURL": "./../../assets/Images/laptop10.jpg",
       "name": "asus tuf",
@@ -181,6 +225,7 @@
       "brand": "asus"
     },
     {
+<<<<<<< HEAD
       "type": "clothing",
       "category": "hangbag",
       "price": 1110,
@@ -192,6 +237,8 @@
     {
       "type": "technology",
       "category": "laptop",
+=======
+>>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
       "price": 444,
       "imgURL": "./../../assets/Images/laptop11.jpg",
       "name": "asus tuf",
@@ -199,8 +246,11 @@
       "brand": "asus"
     },
     {
+<<<<<<< HEAD
       "type": "technology",
       "category": "laptop",
+=======
+>>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
       "price": 111,
       "imgURL": "./../../assets/Images/laptop12.jpg",
       "name": "asus tuf",
@@ -208,6 +258,7 @@
       "brand": "asus"
     },
     {
+<<<<<<< HEAD
       "type": "clothing",
       "category": "hat",
       "price": 8500,
@@ -219,6 +270,8 @@
     {
       "type": "technology",
       "category": "laptop",
+=======
+>>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
       "price": 269,
       "imgURL": "./../../assets/Images/laptop13.jpg",
       "name": "asus tuf",
@@ -226,6 +279,7 @@
       "brand": "asus"
     },
     {
+<<<<<<< HEAD
       "type": "clothing",
       "category": "sport",
       "price": 2690,
@@ -237,6 +291,8 @@
     {
       "type": "technology",
       "category": "laptop",
+=======
+>>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
       "price": 555,
       "imgURL": "./../../assets/Images/laptop14.jpg",
       "name": "asus tuf",
@@ -244,6 +300,7 @@
       "brand": "asus"
     },
     {
+<<<<<<< HEAD
       "type": "clothing",
       "category": "hangbag",
       "price": 5230,
@@ -255,11 +312,14 @@
     {
       "type": "technology",
       "category": "laptop",
+=======
+>>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
       "price": 456,
       "imgURL": "./../../assets/Images/laptop15.jpg",
       "name": "asus tuf",
       "rate": 4.8,
       "brand": "asus"
+<<<<<<< HEAD
     },
     {
       "type": "clothing",
@@ -278,6 +338,8 @@
       "name": "asus tuf",
       "rate": 4.1,
       "brand": "dolceGabanna"
+=======
+>>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
     }
   ]
 }
