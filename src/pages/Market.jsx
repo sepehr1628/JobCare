@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Filter from "../features/products/Filter";
 import BreadCrumb from "../ui/BreadCrumb";
+<<<<<<< HEAD
 import Results from "../ui/Results";
 
 <<<<<<< HEAD
@@ -32,6 +33,45 @@ function Market() {
       setProducts(data);
     } catch (error) {
       console.error(error);
+=======
+import Results from "../features/products/Results";
+import { supabase } from "../ui/supabase";
+
+const PER_PAGE = 10; // Set the number of items per page
+
+function Market() {
+  const [showFilter, setShowFilter] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState();
+  const [page, setPage] = useState(1);
+
+  const getProducts = async (filter) => {
+    const { brand, type, category } = filter;
+    try {
+      setLoading(true);
+      let query = supabase.from("products").select();
+
+      if (brand) {
+        query = query.eq("brand", brand);
+      }
+      if (type) {
+        query = query.eq("type", type);
+      }
+      if (category) {
+        query = query.eq("category", category);
+      }
+
+      query = query.range((page - 1) * PER_PAGE, page * PER_PAGE - 1);
+
+      const { data, error } = await query;
+      if (error) {
+        console.error("Error fetching products:", error);
+      } else {
+        setProducts(data);
+      }
+    } catch (error) {
+      console.error("Error fetching products:", error);
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
     } finally {
       setLoading(false);
     }
@@ -44,6 +84,7 @@ function Market() {
   return (
     <section>
       <BreadCrumb />
+<<<<<<< HEAD
 
       <div className="flex xlg:grid xlg:grid-cols-5 xlg:gap-5 px-8 md:px-24 my-10 md:my-24">
         <Filter
@@ -141,6 +182,23 @@ function Market() {
         />
         <Results setShowFilter={setShowFilter} products={products} />
 >>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
+=======
+      <div className="flex xlg:gap-5 px-8 xlg:px-24 my-10 md:mt-24">
+        <Filter
+          loading={loading}
+          showFilter={showFilter}
+          setShowFilter={setShowFilter}
+          onConfirm={(filter) => getProducts(filter)}
+        />
+        <Results
+          setShowFilter={setShowFilter}
+          products={products}
+          loading={loading}
+          setPage={setPage}
+          onConfirm={(filter) => getProducts(filter)}
+          page={page}
+        />
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
       </div>
     </section>
   );

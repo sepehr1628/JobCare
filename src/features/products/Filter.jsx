@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 function Filter({
   type,
   setType,
@@ -69,12 +70,42 @@ function Filter({ showFilter, filters, setFilters, setGetURL }) {
     if (url !== window.location.search) navigate(url);
   }
 >>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
+=======
+import { useState } from "react";
+import FilterListItem from "./FilterListItem";
+
+function Filter({ setShowFilter, showFilter, onConfirm, loading }) {
+  const [priceRange, setPriceRange] = useState();
+  const [brand, setBrand] = useState("");
+  const [category, setCategory] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    onConfirm({
+      brand,
+      category,
+    });
+  }
+
+  function clearFilter() {
+    setCategory("");
+    setBrand("");
+  }
+
+  function handleDelete() {
+    // e.preventDefault();
+    clearFilter();
+    onConfirm({});
+  }
+
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
   return (
     <aside
       className={`${
         showFilter
           ? "translate-x-0 fixed left-0 right-0 top-0 bottom-0 flex flex-col w-full"
           : "hidden -translate-x-full"
+<<<<<<< HEAD
 <<<<<<< HEAD
       } xlg:translate-x-0 xlg:block border h-fit bg-white border-solid z-40 border-slate-400 rounded-md p-4 [&>div]:my-4`}
     >
@@ -296,10 +327,24 @@ function Filter({ showFilter, filters, setFilters, setGetURL }) {
       } xlg:translate-x-0 xlg:block border bg-white border-solid z-40 border-slate-400 rounded-md p-4 [&>div]:my-4`}
     >
       <b className="text-lg">Filter</b>
+=======
+      } xlg:translate-x-0 xlg:block border bg-white border-solid z-40 border-slate-400 h-fit rounded-md p-8`}
+    >
+      <div className="flex items-center justify-between">
+        <b className="text-lg">Filter</b>
+        <span
+          onClick={() => setShowFilter(false)}
+          className="text-4xl block xlg:hidden cursor-pointer"
+        >
+          &times;
+        </span>
+      </div>
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
       <form onSubmit={handleSubmit}>
         {/* Brand */}
         <div>
           <p className="mb-2 font-medium">Brand</p>
+<<<<<<< HEAD
           <ul className="[&>li]:flex flex xlg:flex-col gap-4 xlg:gap-1 flex-wrap [&>li]:gap-2">
             <li>
               <input
@@ -350,11 +395,54 @@ function Filter({ showFilter, filters, setFilters, setGetURL }) {
                 name="lenovo"
               />
               <label htmlFor="lenovo">Lenovo</label>
+=======
+          <ul className="[&>li]:flex flex xlg:flex-col gap-4 xlg:gap-1 flex-wrap [&>li]:gap-4">
+            <FilterListItem name="brand" value="Apple" setBrand={setBrand}>
+              Apple
+            </FilterListItem>
+            <FilterListItem name="brand" value="asus" setBrand={setBrand}>
+              Asus
+            </FilterListItem>
+            <FilterListItem name="brand" value="hp" setBrand={setBrand}>
+              Hp
+            </FilterListItem>
+            <FilterListItem name="brand" value="acer" setBrand={setBrand}>
+              Acer
+            </FilterListItem>
+            <FilterListItem name="brand" value="lenovo" setBrand={setBrand}>
+              Lenovo
+            </FilterListItem>
+          </ul>
+        </div>
+        <div>
+          <p className="mb-2 font-medium">Category</p>
+          <ul className="[&>li]:flex flex xlg:flex-col gap-4 xlg:gap-1 flex-wrap [&>li]:gap-4">
+            <li>
+              <input
+                type="radio"
+                onChange={(e) => setCategory(e.target.value)}
+                name="category"
+                value="mobile"
+              />
+              <label>mobile</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                onChange={(e) => setCategory(e.target.value)}
+                name="category"
+                value="laptop"
+              />
+              <label>laptop</label>
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
             </li>
           </ul>
         </div>
 
+<<<<<<< HEAD
 >>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
+=======
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
         {/* Price range */}
         <div>
           <p className="mb-2 font-medium">Price Range</p>
@@ -362,6 +450,7 @@ function Filter({ showFilter, filters, setFilters, setGetURL }) {
             onChange={(e) => setPriceRange(e.target.value)}
             type="range"
             name="price-range"
+<<<<<<< HEAD
 <<<<<<< HEAD
             className="w-full  h-[0.35rem]"
             min="0"
@@ -376,15 +465,28 @@ function Filter({ showFilter, filters, setFilters, setGetURL }) {
             Filter
           </button>
 =======
+=======
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
             className="w-full outline-none h-[0.35rem]"
             min="0"
             max="5000"
           />
         </div>
+<<<<<<< HEAD
         <div className="flex justify-evenly">
           <button type="button">Delete</button>
           <button type="submit">Filter</button>
 >>>>>>> dd8f7bfb04099cb94a24acbc66bee841296c8088
+=======
+
+        <div className="flex justify-evenly">
+          <button type="reset" onClick={handleDelete}>
+            Delete
+          </button>
+          <button type="submit" disabled={loading}>
+            Filter
+          </button>
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
         </div>
       </form>
     </aside>

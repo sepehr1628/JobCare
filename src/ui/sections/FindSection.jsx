@@ -4,7 +4,11 @@ function HeroSection() {
   return (
     <section className="bg-gray w-full pt-24 px-4 md:px-24 flex flex-col items-end md:flex-row relative md:space-x-3">
       <div
+<<<<<<< HEAD
         className="hidden lg:block rounded-full bg-blue-900 absolute w-2/3 h-[600px]] top-0 bottom-0 right-0 translate-x-1/3"
+=======
+        className="hidden md:block rounded-full bg-blue-900 absolute w-2/3 h-[600px]] top-0 bottom-0 right-0 translate-x-1/3"
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
         style={{
           background:
             "radial-gradient(circle, rgba(147,184,235,1) 28%, rgba(198,210,210,1) 59%)",

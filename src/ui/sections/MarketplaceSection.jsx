@@ -1,5 +1,9 @@
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { FaCheck } from "react-icons/fa6";
+<<<<<<< HEAD
+=======
+import { Link } from "react-router-dom";
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
 
 function MarketplaceSection() {
   return (
@@ -35,9 +39,18 @@ function MarketplaceSection() {
             12 Education Award Winning
           </li>
         </ul>
+<<<<<<< HEAD
         <button className="bg-blue text-white mt-4 md:m-0 px-3 py-1 w-fit md:px-10 lg:py-2 rounded-full flex gap-2 items-center border border-blue border-solid hover:bg-white hover:text-blue transition-colors duration-300">
           See Products <HiArrowNarrowRight />
         </button>
+=======
+        <Link
+          to="./market"
+          className="bg-blue text-white mt-4 md:m-0 px-3 py-1 w-fit md:px-10 lg:py-2 rounded-full flex gap-2 items-center border border-blue border-solid hover:bg-white hover:text-blue transition-colors duration-300"
+        >
+          See Products <HiArrowNarrowRight />
+        </Link>
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
       </div>
     </section>
   );

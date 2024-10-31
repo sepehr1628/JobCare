@@ -15,7 +15,11 @@ import {
 function FixedMenu({ isMenuOpen }) {
   return (
     <div
+<<<<<<< HEAD
       className={`flex flex-col justify-between md:hidden transition duration-300 w-1/2 bg-gray pt-4 pb-4 px-6 sm:w-1/3 h-full fixed top-0 left-0 z-50 ${
+=======
+      className={`flex flex-col justify-between xlg:hidden transition duration-300 w-1/2 bg-slate-200 pt-4 pb-4 px-6 sm:w-1/3 h-full fixed top-0 left-0 z-50 ${
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
         !isMenuOpen ? "-translate-x-full" : "translate-x-0 shadow-3xl"
       }`}
     >
