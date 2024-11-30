@@ -4,8 +4,12 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
+<<<<<<< HEAD
         breadcrumb:
           "url(https://fjuyygujrfbbkoktmbdb.supabase.co/storage/v1/object/public/Public-UI-pics/breadcrumb-bg.png?t=2024-11-07T17%3A12%3A43.581Z)",
+=======
+        breadcrumb: "url(./assets/Images/breadcrumb-bg.png)",
+>>>>>>> origin/master
       },
       colors: {
         black: "#000",

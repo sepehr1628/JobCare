@@ -1,3 +1,37 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+
+function Navbar() {
+  return (
+    <nav className="m-auto ml-12">
+      <ul className="hidden md:flex md:flex-wrap space-x-8 [&>li]:m-auto [&>li>.active]:font-bold">
+        <li className="hover:-translate-y-1 hover:transform transition duration-300">
+          <NavLink to="/">Home</NavLink>
+        </li>
+        <li className="hover:-translate-y-1 hover:transform transition duration-300">
+          <NavLink to="/market">Market</NavLink>
+        </li>
+        <li className="hover:-translate-y-1 hover:transform transition duration-300">
+          <NavLink to="/freelancer">Freelancer</NavLink>
+        </li>
+        <li className="hover:-translate-y-1 hover:transform transition duration-300">
+          <NavLink to="/blog">Blog</NavLink>
+        </li>
+        <li className="hover:-translate-y-1 hover:transform transition duration-300">
+          <NavLink to="/educations">Educations</NavLink>
+        </li>
+        <li className="hover:-translate-y-1 hover:transform transition duration-300">
+          <NavLink to="/projects">Projects</NavLink>
+        </li>
+        <li className="hover:-translate-y-1 hover:transform transition duration-300">
+          <NavLink to="/resume">Resume</NavLink>
+        </li>
+        <li className="hover:-translate-y-1 hover:transform transition duration-300">
+=======
+>>>>>>> origin/master
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -67,6 +101,10 @@ function Navbar() {
           <NavLink to="/resume">Resume</NavLink>
         </li>
         <li className="hover:-translate-y-1 hover:transform transition duration-300 nav-item">
+<<<<<<< HEAD
+=======
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
+>>>>>>> origin/master
           <NavLink to="/contact-us">Contact Us</NavLink>
         </li>
       </ul>

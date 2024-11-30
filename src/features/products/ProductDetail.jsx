@@ -1,22 +1,38 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+function ProductDetail() {
+  return <div></div>;
+=======
+>>>>>>> origin/master
 import { useEffect, useState } from "react";
 import BreadCrumb from "../../ui/BreadCrumb";
 import { useParams } from "react-router";
 import Spinner from "../../ui/Spinner";
 import ProductCommentCard from "./ProductCommentCard";
 import ProductDetailCard from "./ProductDetailCard";
+<<<<<<< HEAD
 import { supabase } from "../../ui/supabase";
+=======
+>>>>>>> origin/master
 
 function ProductDetail() {
   const [loading, setLoading] = useState();
   const [product, setProduct] = useState();
   const [productInfo, setProductInfo] = useState(1);
 
+<<<<<<< HEAD
   const { productID } = useParams();
+=======
+  const id = useParams();
+
+>>>>>>> origin/master
   useEffect(
     function () {
       async function getProductDetail() {
         try {
           setLoading(true);
+<<<<<<< HEAD
           let query = supabase
             .from("products")
             .select("*")
@@ -25,6 +41,13 @@ function ProductDetail() {
           const { data, error } = await query;
           setProduct(data);
           error && console.error(error);
+=======
+          const res = await fetch(
+            `http://localhost:5000/laptops?id=${id.productID}`
+          );
+          const data = await res.json();
+          setProduct(...data);
+>>>>>>> origin/master
         } catch (error) {
           console.error(error);
         } finally {
@@ -33,11 +56,17 @@ function ProductDetail() {
       }
       getProductDetail();
     },
+<<<<<<< HEAD
     [productID]
   );
 
   // HOC component
 
+=======
+    [id.productID]
+  );
+
+>>>>>>> origin/master
   function handleDetail(e) {
     e.preventDefault();
     setProductInfo(1);
@@ -54,6 +83,7 @@ function ProductDetail() {
     <>
       <BreadCrumb data={product} />
       <section className="md:px-24">
+<<<<<<< HEAD
         <div className="md:px-24 gap-5 py-10 grid grid-cols-[1fr_1.5fr] gap-y-2">
           <div className="p-2 border border-solid border-black rounded-md flex items-center">
             <img
@@ -86,6 +116,14 @@ function ProductDetail() {
             <button className="bg-blue text-white hover:bg-white hover:text-blue transition-all duration-300 mt-4 mb-2 px-10 py-1 lg:py-2 rounded-full border border-blue border-solid flex items-center justify-center gap-2">
               Add To Cart
             </button>
+=======
+        <div className="md:px-24 flex">
+          <div className="p-2">
+            <img src={product?.imgURL} alt={product?.name} className="w-96" />
+          </div>
+          <div className="p-2">
+            <h1>{product?.name}</h1>
+>>>>>>> origin/master
           </div>
         </div>
         <div className="my-16">
@@ -105,7 +143,11 @@ function ProductDetail() {
           </div>
           <div className="px-10">
             {productInfo === 1 ? (
+<<<<<<< HEAD
               <ProductDetailCard product={product} />
+=======
+              <ProductDetailCard />
+>>>>>>> origin/master
             ) : (
               <ProductCommentCard setProductInfo={setProductInfo} />
             )}
@@ -114,6 +156,10 @@ function ProductDetail() {
       </section>
     </>
   );
+<<<<<<< HEAD
+=======
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
+>>>>>>> origin/master
 }
 
 export default ProductDetail;

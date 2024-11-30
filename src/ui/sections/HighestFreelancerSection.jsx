@@ -33,6 +33,12 @@ function HighestFreelancerSection() {
             },
           }}
         >
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+          <SwiperSlide className="flex flex-col gap-4 border border-solid border-slate-400 rounded-md items-center p-5">
+=======
+>>>>>>> origin/master
           <SwiperSlide className="flex flex-col gap-4 border border-solid border-slate-400 rounded-md items-center p-5 ">
             <div>
               <img
@@ -151,6 +157,10 @@ function HighestFreelancerSection() {
             </button>
           </SwiperSlide>
           <SwiperSlide className="flex flex-col gap-4 border border-solid border-slate-400 rounded-md items-center p-5 ">
+<<<<<<< HEAD
+=======
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
+>>>>>>> origin/master
             <div>
               <img
                 src="./../../assets/Images/teacher-picture.png"
@@ -190,7 +200,255 @@ function HighestFreelancerSection() {
             </button>
           </SwiperSlide>
 
+<<<<<<< HEAD
           <SwiperSlide className="flex flex-col gap-4 border border-solid border-slate-400 rounded-md items-center p-5 ">
+=======
+<<<<<<< HEAD
+          <SwiperSlide className="flex flex-col gap-4 border border-solid border-slate-400 rounded-md items-center p-5">
+            <div>
+              <img
+                src="./../../assets/Images/teacher-picture.png"
+                alt="freelancer picture"
+                className="w-16"
+              />
+            </div>
+            <div className="flex flex-col items-center">
+              <strong>Martin Dias</strong>
+              <p>Web Developer</p>
+            </div>
+            <div className="flex flex-wrap gap-2 text-xs">
+              <p>Star Component</p>
+              <span>4.5</span>
+              <p className="text-[0.65rem]">(2 Reviews)</p>
+            </div>
+            <div className="flex gap-2">
+              <button className="bg-blue-100 text-black text-sm md:m-0 px-3 py-1 md:px-4 rounded-full flex gap-2 items-center">
+                Create
+              </button>
+              <button className="bg-blue-100 text-black text-sm md:m-0 px-3 py-1 md:px-4 rounded-full flex gap-2 items-center">
+                Figma
+              </button>
+            </div>
+            <div className="flex justify-between w-full flex-wrap border-t-2 mt-4 p-2 border-solid border-slate-300">
+              <div className="flex flex-col">
+                <b>Location:</b>
+                <p>London</p>
+              </div>
+              <div className="flex flex-col">
+                <b>Rate:</b>
+                <p className="text-gray-900">$25 - $35 / hr</p>
+              </div>
+            </div>
+            <button className="hover:bg-blue hover:text-white mt-4 md:m-0 px-3 py-1 md:px-10 lg:py-2 rounded-full border border-blue border-solid bg-white text-blue transition-colors duration-300 flex gap-2 items-center">
+              View Profile <HiArrowNarrowRight />
+            </button>
+          </SwiperSlide>
+
+          <SwiperSlide className="flex flex-col gap-4 border border-solid border-slate-400 rounded-md items-center p-5">
+            <div>
+              <img
+                src="./../../assets/Images/teacher-picture.png"
+                alt="freelancer picture"
+                className="w-16"
+              />
+            </div>
+            <div className="flex flex-col items-center">
+              <strong>Martin Dias</strong>
+              <p>Web Developer</p>
+            </div>
+            <div className="flex flex-wrap gap-2 text-xs">
+              <p>Star Component</p>
+              <span>4.5</span>
+              <p className="text-[0.65rem]">(2 Reviews)</p>
+            </div>
+            <div className="flex gap-2">
+              <button className="bg-blue-100 text-black text-sm md:m-0 px-3 py-1 md:px-4 rounded-full flex gap-2 items-center">
+                Create
+              </button>
+              <button className="bg-blue-100 text-black text-sm md:m-0 px-3 py-1 md:px-4 rounded-full flex gap-2 items-center">
+                Figma
+              </button>
+            </div>
+            <div className="flex justify-between w-full flex-wrap border-t-2 mt-4 p-2 border-solid border-slate-300">
+              <div className="flex flex-col">
+                <b>Location:</b>
+                <p>London</p>
+              </div>
+              <div className="flex flex-col">
+                <b>Rate:</b>
+                <p className="text-gray-900">$25 - $35 / hr</p>
+              </div>
+            </div>
+            <button className="hover:bg-blue hover:text-white mt-4 md:m-0 px-3 py-1 md:px-10 lg:py-2 rounded-full border border-blue border-solid bg-white text-blue transition-colors duration-300 flex gap-2 items-center">
+              View Profile <HiArrowNarrowRight />
+            </button>
+          </SwiperSlide>
+
+          <SwiperSlide className="flex flex-col gap-4 border border-solid border-slate-400 rounded-md items-center p-5">
+            <div>
+              <img
+                src="./../../assets/Images/teacher-picture.png"
+                alt="freelancer picture"
+                className="w-16"
+              />
+            </div>
+            <div className="flex flex-col items-center">
+              <strong>Martin Dias</strong>
+              <p>Web Developer</p>
+            </div>
+            <div className="flex flex-wrap gap-2 text-xs">
+              <p>Star Component</p>
+              <span>4.5</span>
+              <p className="text-[0.65rem]">(2 Reviews)</p>
+            </div>
+            <div className="flex gap-2">
+              <button className="bg-blue-100 text-black text-sm md:m-0 px-3 py-1 md:px-4 rounded-full flex gap-2 items-center">
+                Create
+              </button>
+              <button className="bg-blue-100 text-black text-sm md:m-0 px-3 py-1 md:px-4 rounded-full flex gap-2 items-center">
+                Figma
+              </button>
+            </div>
+            <div className="flex justify-between w-full flex-wrap border-t-2 mt-4 p-2 border-solid border-slate-300">
+              <div className="flex flex-col">
+                <b>Location:</b>
+                <p>London</p>
+              </div>
+              <div className="flex flex-col">
+                <b>Rate:</b>
+                <p className="text-gray-900">$25 - $35 / hr</p>
+              </div>
+            </div>
+            <button className="hover:bg-blue hover:text-white mt-4 md:m-0 px-3 py-1 md:px-10 lg:py-2 rounded-full border border-blue border-solid bg-white text-blue transition-colors duration-300 flex gap-2 items-center">
+              View Profile <HiArrowNarrowRight />
+            </button>
+          </SwiperSlide>
+
+          <SwiperSlide className="flex flex-col gap-4 border border-solid border-slate-400 rounded-md items-center p-5">
+            <div>
+              <img
+                src="./../../assets/Images/teacher-picture.png"
+                alt="freelancer picture"
+                className="w-16"
+              />
+            </div>
+            <div className="flex flex-col items-center">
+              <strong>Martin Dias</strong>
+              <p>Web Developer</p>
+            </div>
+            <div className="flex flex-wrap gap-2 text-xs">
+              <p>Star Component</p>
+              <span>4.5</span>
+              <p className="text-[0.65rem]">(2 Reviews)</p>
+            </div>
+            <div className="flex gap-2">
+              <button className="bg-blue-100 text-black text-sm md:m-0 px-3 py-1 md:px-4 rounded-full flex gap-2 items-center">
+                Create
+              </button>
+              <button className="bg-blue-100 text-black text-sm md:m-0 px-3 py-1 md:px-4 rounded-full flex gap-2 items-center">
+                Figma
+              </button>
+            </div>
+            <div className="flex justify-between w-full flex-wrap border-t-2 mt-4 p-2 border-solid border-slate-300">
+              <div className="flex flex-col">
+                <b>Location:</b>
+                <p>London</p>
+              </div>
+              <div className="flex flex-col">
+                <b>Rate:</b>
+                <p className="text-gray-900">$25 - $35 / hr</p>
+              </div>
+            </div>
+            <button className="hover:bg-blue hover:text-white mt-4 md:m-0 px-3 py-1 md:px-10 lg:py-2 rounded-full border border-blue border-solid bg-white text-blue transition-colors duration-300 flex gap-2 items-center">
+              View Profile <HiArrowNarrowRight />
+            </button>
+          </SwiperSlide>
+
+          <SwiperSlide className="flex flex-col gap-4 border border-solid border-slate-400 rounded-md items-center p-5">
+            <div>
+              <img
+                src="./../../assets/Images/teacher-picture.png"
+                alt="freelancer picture"
+                className="w-16"
+              />
+            </div>
+            <div className="flex flex-col items-center">
+              <strong>Martin Dias</strong>
+              <p>Web Developer</p>
+            </div>
+            <div className="flex flex-wrap gap-2 text-xs">
+              <p>Star Component</p>
+              <span>4.5</span>
+              <p className="text-[0.65rem]">(2 Reviews)</p>
+            </div>
+            <div className="flex gap-2">
+              <button className="bg-blue-100 text-black text-sm md:m-0 px-3 py-1 md:px-4 rounded-full flex gap-2 items-center">
+                Create
+              </button>
+              <button className="bg-blue-100 text-black text-sm md:m-0 px-3 py-1 md:px-4 rounded-full flex gap-2 items-center">
+                Figma
+              </button>
+            </div>
+            <div className="flex justify-between w-full flex-wrap border-t-2 mt-4 p-2 border-solid border-slate-300">
+              <div className="flex flex-col">
+                <b>Location:</b>
+                <p>London</p>
+              </div>
+              <div className="flex flex-col">
+                <b>Rate:</b>
+                <p className="text-gray-900">$25 - $35 / hr</p>
+              </div>
+            </div>
+            <button className="hover:bg-blue hover:text-white mt-4 md:m-0 px-3 py-1 md:px-10 lg:py-2 rounded-full border border-blue border-solid bg-white text-blue transition-colors duration-300 flex gap-2 items-center">
+              View Profile <HiArrowNarrowRight />
+            </button>
+          </SwiperSlide>
+
+          <SwiperSlide className="flex flex-col gap-4 border border-solid border-slate-400 rounded-md items-center p-5">
+            <div>
+              <img
+                src="./../../assets/Images/teacher-picture.png"
+                alt="freelancer picture"
+                className="w-16"
+              />
+            </div>
+            <div className="flex flex-col items-center">
+              <strong>Martin Dias</strong>
+              <p>Web Developer</p>
+            </div>
+            <div className="flex flex-wrap gap-2 text-xs">
+              <p>Star Component</p>
+              <span>4.5</span>
+              <p className="text-[0.65rem]">(2 Reviews)</p>
+            </div>
+            <div className="flex gap-2">
+              <button className="bg-blue-100 text-black text-sm md:m-0 px-3 py-1 md:px-4 rounded-full flex gap-2 items-center">
+                Create
+              </button>
+              <button className="bg-blue-100 text-black text-sm md:m-0 px-3 py-1 md:px-4 rounded-full flex gap-2 items-center">
+                Figma
+              </button>
+            </div>
+            <div className="flex justify-between w-full flex-wrap border-t-2 mt-4 p-2 border-solid border-slate-300">
+              <div className="flex flex-col">
+                <b>Location:</b>
+                <p>London</p>
+              </div>
+              <div className="flex flex-col">
+                <b>Rate:</b>
+                <p className="text-gray-900">$25 - $35 / hr</p>
+              </div>
+            </div>
+            <button className="hover:bg-blue hover:text-white mt-4 md:m-0 px-3 py-1 md:px-10 lg:py-2 rounded-full border border-blue border-solid bg-white text-blue transition-colors duration-300 flex gap-2 items-center">
+              View Profile <HiArrowNarrowRight />
+            </button>
+          </SwiperSlide>
+
+          <SwiperSlide className="flex flex-col gap-4 border border-solid border-slate-400 rounded-md items-center p-5">
+=======
+          <SwiperSlide className="flex flex-col gap-4 border border-solid border-slate-400 rounded-md items-center p-5 ">
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
+>>>>>>> origin/master
             <div>
               <img
                 src="./../../assets/Images/teacher-picture.png"

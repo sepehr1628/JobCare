@@ -29,14 +29,46 @@ function Header({ type }) {
   );
 
   const handleCloseMenu = (e) => {
+<<<<<<< HEAD
     if (myRef.current && !myRef.current.contains(e.target))
       setIsMenuOpen(false);
+=======
+<<<<<<< HEAD
+    if (myRef.current && !myRef.current.contains(e.target)) {
+      setIsMenuOpen(false);
+    }
+=======
+    if (myRef.current && !myRef.current.contains(e.target))
+      setIsMenuOpen(false);
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
+>>>>>>> origin/master
   };
 
   return (
     <header
+<<<<<<< HEAD
       id="scroll-here"
       ref={myRef}
+=======
+      ref={myRef}
+<<<<<<< HEAD
+      className={`flex justify-between bg-inherit items-center p-4 md:px-24 z-10 ${
+        type && "absolute top-0 left-0 right-0"
+      }`}
+    >
+      {/* {isMenuOpen && <Overlay />} */}
+      <div className="flex justify-between">
+        <Logo />
+        <Navbar />
+      </div>
+      <div className="flex items-center space-x-6">
+        <button className="text-blue-900 hidden md:flex items-center gap-2 py-2 px-8 rounded-3xl my-2">
+          <HiOutlineShoppingCart className="text-xl" />
+          Cart
+        </button>
+        <button className="hidden md:block bg-[#1F69DC] py-2 transition-all duration-300 hover:px-12 px-8 text-slate-50 rounded-3xl my-2">
+=======
+>>>>>>> origin/master
       className={`flex justify-between bg-inherit items-center p-4 xlg:px-24 z-10 ${
         type ? "absolute top-0 left-0 right-0" : ""
       }`}
@@ -51,13 +83,25 @@ function Header({ type }) {
           Cart
         </button>
         <button className="hidden xlg:block bg-[#1F69DC] py-2 transition-all duration-300 hover:px-12 px-8 text-slate-50 rounded-3xl my-2">
+<<<<<<< HEAD
+=======
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
+>>>>>>> origin/master
           Sign In
         </button>
       </div>
       <FixedMenu isMenuOpen={isMenuOpen} />
 
       <button
+<<<<<<< HEAD
         className="xlg:hidden"
+=======
+<<<<<<< HEAD
+        className="md:hidden"
+=======
+        className="xlg:hidden"
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
+>>>>>>> origin/master
         onClick={() => setIsMenuOpen((status) => !status)}
       >
         <svg

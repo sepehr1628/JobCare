@@ -33,7 +33,11 @@ function ProductCommentCard() {
   if (isSubmitting) return <Spinner fullPage={true} />;
   return (
     <>
+<<<<<<< HEAD
       <b className="my-6 text-lg block">Add Your Comment</b>
+=======
+      <b className="my-6 block">Add Your Comment</b>
+>>>>>>> origin/master
       <StarRating size="24" />
       <form
         onSubmit={handleSubmit}

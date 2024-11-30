@@ -1,6 +1,13 @@
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { FaCheck } from "react-icons/fa6";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
+=======
+<<<<<<< HEAD
+=======
+import { Link } from "react-router-dom";
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
+>>>>>>> origin/master
 
 function MarketplaceSection() {
   return (
@@ -12,8 +19,14 @@ function MarketplaceSection() {
           alt="Join World's Best Marketplace for Workers"
         />
       </div>
+<<<<<<< HEAD
       <div className="xlg:w-1/2 p-4 flex flex-col gap-7 xlg:gap-0 justify-between xlg:h-[400px]">
         <h2 className="text-4xl font-semibold">
+=======
+      <div className="xlg:w-1/2 p-4 flex flex-col gap-7 xlg:gap-0 justify-between min-w-96 xlg:h-[400px]">
+        <h2 className="text-4xl font-semibold">
+          {/* BUG */}
+>>>>>>> origin/master
           {"Join World's Best Marketplace for Workers"}
         </h2>
         <p>
@@ -35,12 +48,24 @@ function MarketplaceSection() {
             12 Education Award Winning
           </li>
         </ul>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <button className="bg-blue text-white mt-4 md:m-0 px-3 py-1 w-fit md:px-10 lg:py-2 rounded-full flex gap-2 items-center border border-blue border-solid hover:bg-white hover:text-blue transition-colors duration-300">
+          See Products <HiArrowNarrowRight />
+        </button>
+=======
+>>>>>>> origin/master
         <Link
           to="./market"
           className="bg-blue text-white mt-4 md:m-0 px-3 py-1 w-fit md:px-10 lg:py-2 rounded-full flex gap-2 items-center border border-blue border-solid hover:bg-white hover:text-blue transition-colors duration-300"
         >
           See Products <HiArrowNarrowRight />
         </Link>
+<<<<<<< HEAD
+=======
+>>>>>>> 9ba86ff (feature/ json server removed from project and supabase replaces instead. filtering and pagination fixed)
+>>>>>>> origin/master
       </div>
     </section>
   );
