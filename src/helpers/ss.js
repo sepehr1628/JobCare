@@ -1,0 +1,1 @@
+const s = {companyName: "Martin", "Bowman and Griffin", deadline: "03/03/2023", employer: "Michael Newton", projectName: "optimize front-end metrics", skillsUsed: [Content Strategy, Vue]}
