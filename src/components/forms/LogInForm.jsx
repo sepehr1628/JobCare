@@ -20,7 +20,6 @@ function LogInForm() {
         email: loginEmail,
         password: loginPassword,
       });
-      // localStorage.setItem("accessToken", data.session.access_token);
       setIsLoading(false);
       if (error) throw new Error(error.message);
       if (!error && data.user.role === "authenticated") {
