@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { FaCheck } from "react-icons/fa";
 
 function ProductDetailCard({ product }) {
@@ -15,10 +14,6 @@ function ProductDetailCard({ product }) {
       </ul>
     </div>
   );
-=======
-function ProductDetailCard() {
-  return <div>Product Detail</div>;
->>>>>>> origin/master
 }
 
 export default ProductDetailCard;
