@@ -58,11 +58,7 @@ function Header({ type }) {
           <HiOutlineShoppingCart className="text-xl" />
           Cart
         </button>
-        {/* {isAuthenticated ? (
-          <SigninButton type="mdDisplay" setIsMenuOpen={setIsMenuOpen} />
-        ) : (
-          <button>Panel</button>
-        )} */}
+        <SigninButton type="mdDisplay" setIsMenuOpen={setIsMenuOpen} />
       </div>
       <FixedMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 

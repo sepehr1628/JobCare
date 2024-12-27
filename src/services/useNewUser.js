@@ -1,6 +1,6 @@
 import { supabase } from "../../supabase";
 
-export async function useNeewUse() {
+export async function useNewUse() {
   const { data, session, error } = await supabase.auth.signUp({
     email: "example@email.com",
     password: "example-password",
