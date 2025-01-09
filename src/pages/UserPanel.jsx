@@ -1,5 +1,5 @@
 function UserPanel() {
-  return <div>Hello</div>;
+  return <>Hi</>;
 }
 
 export default UserPanel;

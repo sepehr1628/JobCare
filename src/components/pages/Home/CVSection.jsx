@@ -2,7 +2,7 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 
 function CVSection() {
   return (
-    <section className="px-4 py-12 sm:py-16 md:px-24 md:py-24 gap-4 flex items-center flex-wrap lg:flex-nowrap dark:bg-[#293034b0]">
+    <section className="px-4 py-6 sm:py-16 md:px-24 md:p-24 gap-4 flex items-center flex-wrap lg:flex-nowrap dark:bg-[#293034b0]">
       <div className="md:p-2 xlg:w-5/12 flex-grow flex justify-center">
         <img
           src="./../../assets/Images/cv-great-employers.png"

@@ -9,7 +9,7 @@ function ProtectedRoute({ children }) {
 
   useEffect(() => {
     if (!accessToken) {
-      navigate("/login");
+      navigate("/dashboard", { replace: true });
     }
   }, [navigate, accessToken]);
 

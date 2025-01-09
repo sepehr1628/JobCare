@@ -1,8 +1,10 @@
 import FilterListItem from "@/features/shop/FilterListItem";
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router";
+import { useSearchParams } from "react-router-dom";
 
 function SearchFilterForm({ filterItems, isLoading }) {
+  const [_, setFilterURL] = useSearchParams();
   const location = useLocation();
   const formRef = useRef(null);
 
@@ -16,18 +18,34 @@ function SearchFilterForm({ filterItems, isLoading }) {
     [location.pathname]
   );
 
+  function handleSubmitFilterForm(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
+    const firstFilterPart = formData.getAll(keys[0]);
+    const secondFilterPart = formData.getAll(keys[1]);
+
+    const newSearchParams = new URLSearchParams();
+    console.log(newSearchParams);
+
+    if (firstFilterPart.length > 0) {
+      newSearchParams.set(keys[0], firstFilterPart.join(","));
+    }
+
+    if (secondFilterPart.length > 0) {
+      newSearchParams.set(keys[1], secondFilterPart.join(","));
+    }
+    const decodedParams = decodeURIComponent(newSearchParams.toString());
+    setFilterURL(decodedParams);
+  }
+
   return (
-    <form
-      ref={formRef}
-      onSubmit={(e) => {
-        e.preventDefault();
-      }}
-    >
+    <form ref={formRef} onSubmit={handleSubmitFilterForm}>
       <div>
         <p className="mt-4 mb-2 font-medium">{keys[0]}</p>
         <ul className="[&>li]:flex flex xlg:flex-col gap-4 xlg:gap-1 flex-wrap [&>li]:gap-4">
           {values[0].map((el, i) => (
-            <FilterListItem key={i} inputLabel={el} />
+            <FilterListItem key={i} name={keys[0]} inputLabel={el} value={el} />
           ))}
         </ul>
       </div>
@@ -35,7 +53,7 @@ function SearchFilterForm({ filterItems, isLoading }) {
         <p className="mt-4 mb-2 font-medium">{keys[1]}</p>
         <ul className="[&>li]:flex flex xlg:flex-col gap-4 xlg:gap-1 flex-wrap [&>li]:gap-4">
           {values[1].map((el, i) => (
-            <FilterListItem key={i} inputLabel={el} />
+            <FilterListItem key={i} name={keys[1]} inputLabel={el} value={el} />
           ))}
         </ul>
       </div>

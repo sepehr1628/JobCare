@@ -28,7 +28,7 @@ function LogInForm() {
       if (data.session.access_token) {
         if (data.session.access_token) {
           toast.success("Welcome Back🎉");
-          navigate("/panel");
+          navigate("/dashboard", { replace: true });
         } else {
           throw new Error("Session not established. Please try again.");
         }

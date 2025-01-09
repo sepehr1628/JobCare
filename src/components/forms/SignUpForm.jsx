@@ -26,7 +26,7 @@ function SignUpForm() {
       setAccessToken(data.session.access_token);
       if (data.session.access_token) {
         toast.success("Signed up succesfully 🎉");
-        navigate("panel");
+        navigate("/dashboard", { replace: true });
       }
       if (error) throw new Error(error);
     } catch (error) {

@@ -1,7 +1,7 @@
-function FilterListItem({ inputLabel }) {
+function FilterListItem({ inputLabel, name, value }) {
   return (
     <li>
-      <input type="checkbox" id={inputLabel} />
+      <input type="checkbox" name={name} id={inputLabel} defaultValue={value} />
       <label htmlFor={inputLabel}>{inputLabel}</label>
     </li>
   );

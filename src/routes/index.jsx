@@ -60,7 +60,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/panel",
+    path: "/dashboard",
     element: (
       <ProtectedRoute>
         <UserPanel />,

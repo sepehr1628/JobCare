@@ -19,6 +19,8 @@ function Market() {
 
   const [url] = useSearchParams();
   const sorting = url.get("sort");
+  const brand = url.getAll("brand");
+  console.log(brand);
 
   const location = useLocation();
   const pathname = location.pathname;
@@ -84,9 +86,6 @@ function Market() {
             data={data}
             cards={ItemCards}
             pathname={pathname}
-            onConfirm={(filter) => {
-              getProducts(filter);
-            }}
           />
         </div>
       </div>
