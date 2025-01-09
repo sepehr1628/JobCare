@@ -5,9 +5,9 @@ import Navbar from "@/components/Common/Navbar";
 // import Overlay from "./Overlay";
 
 import { HiOutlineShoppingCart } from "react-icons/hi";
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import SigninButton from "../Buttons/SigninButton";
-import { useUser } from "@/services/useUser";
+import useAuthStore from "@/stores/useAuthStore";
 
 function Header({ type }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,8 +17,9 @@ function Header({ type }) {
 
   const myRef = useRef();
 
-  const { data } = useUser();
-  // setIsAuthenticated(data.role === "authenticated");
+  const navigate = useNavigate();
+
+  const { accessToken } = useAuthStore();
 
   useEffect(
     function () {
@@ -58,7 +59,17 @@ function Header({ type }) {
           <HiOutlineShoppingCart className="text-xl" />
           Cart
         </button>
-        <SigninButton type="mdDisplay" setIsMenuOpen={setIsMenuOpen} />
+
+        {!accessToken ? (
+          <SigninButton type="mdDisplay" setIsMenuOpen={setIsMenuOpen} />
+        ) : (
+          <button
+            onClick={() => navigate("/panel")}
+            className="px-6 py-2 bg-[#1F69DC] transition-all duration-300  text-slate-50 hover:bg-[#1f3bdc] dark:bg-blue-900 rounded-3xl hidden xlg:block px-8 py-2"
+          >
+            Dashboard
+          </button>
+        )}
       </div>
       <FixedMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 

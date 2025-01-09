@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "../../../supabase";
@@ -13,14 +13,7 @@ function LogInForm() {
 
   const navigate = useNavigate();
 
-  const { setAccessToken, accessToken } = useAuthStore();
-
-  useEffect(
-    function () {
-      if (accessToken) navigate("/panel");
-    },
-    [navigate, accessToken]
-  );
+  const { setAccessToken } = useAuthStore();
 
   const handleLogIn = async (e) => {
     e.preventDefault();
@@ -33,9 +26,9 @@ function LogInForm() {
       setAccessToken(data.session.access_token);
       if (error) throw new Error(error.message);
       if (data.session.access_token) {
-        // const { data: accessToken } = await supabase.auth.getSession();
-        if (accessToken) {
+        if (data.session.access_token) {
           toast.success("Welcome Back🎉");
+          navigate("/panel");
         } else {
           throw new Error("Session not established. Please try again.");
         }

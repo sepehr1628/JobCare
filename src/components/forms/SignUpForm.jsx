@@ -13,14 +13,7 @@ function SignUpForm() {
 
   const navigate = useNavigate();
 
-  const { setAccessToken, accessToken } = useAuthStore();
-
-  useEffect(
-    function () {
-      if (accessToken) navigate("/panel");
-    },
-    [navigate, accessToken]
-  );
+  const { setAccessToken } = useAuthStore();
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -31,7 +24,10 @@ function SignUpForm() {
         password: signUpPassword,
       });
       setAccessToken(data.session.access_token);
-      if (data.session) toast.success("Signed up succesfully 🎉");
+      if (data.session.access_token) {
+        toast.success("Signed up succesfully 🎉");
+        navigate("panel");
+      }
       if (error) throw new Error(error);
     } catch (error) {
       toast.error(error.message);
