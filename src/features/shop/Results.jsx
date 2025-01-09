@@ -1,4 +1,6 @@
-function Results({ data, cards, pathname }) {
+import ProductCardSkeleton from "../products/ProductCardSkeleon";
+
+function Results({ data, cards, pathname, isLoading }) {
   const CardComponent = Object.entries(cards).filter(
     (el) => el[0] === pathname
   )[0][1];
@@ -6,6 +8,20 @@ function Results({ data, cards, pathname }) {
   return (
     <>
       <div className="flex flex-wrap justify-evenly xl:grid xl:grid-cols-3 xl:grid-rows-3 gap-5 items-center [&>div]:max-w-96 [&>div]:sm:max-w-72 [&>div]:border xl:[&>div]:max-w-none [&>div]:border-solid [&>div]:border-gray-400 [&>div]:w-full [&>div]:rounded-md">
+        {isLoading && (
+          <>
+            <ProductCardSkeleton />
+            <ProductCardSkeleton />
+            <ProductCardSkeleton />
+            <ProductCardSkeleton />
+            <ProductCardSkeleton />
+            <ProductCardSkeleton />
+            <ProductCardSkeleton />
+            <ProductCardSkeleton />
+            <ProductCardSkeleton />
+            <ProductCardSkeleton />
+          </>
+        )}
         {data &&
           data.map((item) => <CardComponent item={item} key={item.id} />)}
       </div>

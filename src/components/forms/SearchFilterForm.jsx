@@ -1,16 +1,26 @@
 import FilterListItem from "@/features/shop/FilterListItem";
+import { useEffect, useRef } from "react";
+import { useLocation } from "react-router";
 
 function SearchFilterForm({ filterItems, isLoading }) {
-  // const [brands, setBrands] = useState([]);
-  // const [categories, setCategories] = useState([]);
+  const location = useLocation();
+  const formRef = useRef(null);
 
   const keys = Object.keys(filterItems);
   const values = Object.values(filterItems);
+
+  useEffect(
+    function () {
+      formRef?.current?.reset();
+    },
+    [location.pathname]
+  );
+
   return (
     <form
+      ref={formRef}
       onSubmit={(e) => {
         e.preventDefault();
-        console.log(e.target.checked);
       }}
     >
       <div>

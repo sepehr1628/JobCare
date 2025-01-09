@@ -10,12 +10,12 @@ import { getFreelancers } from "../services/apiFreelancers";
 import ProductCard from "../features/products/ProductCard";
 import FreelancerCard from "../features/freelancers/FreelancerCard";
 import ProjectCard from "../features/projects/ProjectCard";
-import ProductCardSkeleton from "../features/products/ProductCardSkeleon";
 import ResultsHeader from "../features/shop/ResultsHeader";
 import { useScrollTop } from "@/services/useScrollTop";
 
 function Market() {
   const [showFilter, setShowFilter] = useState(false);
+  const [filter, setFilter] = useState({});
 
   const [url] = useSearchParams();
   const sorting = url.get("sort");
@@ -47,16 +47,10 @@ function Market() {
   const filterItems = map[pathname.slice(1)];
 
   const queryFunctions = {
-    "/freelancers": () => getFreelancers({ sorting }),
-    "/market": () => getProducts({ sorting }),
-    "/projects": () => getProjects({ sorting }),
+    "/freelancers": () => getFreelancers({ sorting, filter }),
+    "/market": () => getProducts({ sorting, filter }),
+    "/projects": () => getProjects({ sorting, filter }),
   };
-
-  // const queryFilters = {
-  //   "/freelancers": ["skill", "level"],
-  //   "/market": ["brand", "category"],
-  //   "/projects": ["level", "category"],
-  // };
 
   const ItemCards = {
     "/freelancers": FreelancerCard,
@@ -80,32 +74,20 @@ function Market() {
           setShowFilter={setShowFilter}
           filterItems={filterItems}
           isLoading={isLoading}
+          filter={filter}
         />
         <div className="flex flex-col w-full col-span-4">
           <ResultsHeader setShowFilter={setShowFilter} data={data} />
-          {!isLoading && (
-            <Results
-              setShowFilter={setShowFilter}
-              data={data}
-              cards={ItemCards}
-              pathname={pathname}
-              onConfirm={(filter) => {
-                getProducts(filter);
-              }}
-            />
-          )}
-          <div className="flex flex-wrap justify-evenly xl:grid xl:grid-cols-3 xl:grid-rows-3 gap-5 items-center [&>div]:max-w-96 [&>div]:sm:max-w-72 [&>div]:border xl:[&>div]:max-w-none [&>div]:border-solid [&>div]:border-gray-400 [&>div]:w-full [&>div]:rounded-md">
-            {isLoading && (
-              <>
-                <ProductCardSkeleton />
-                <ProductCardSkeleton />
-                <ProductCardSkeleton />
-                <ProductCardSkeleton />
-                <ProductCardSkeleton />
-                <ProductCardSkeleton />
-              </>
-            )}
-          </div>
+          <Results
+            isLoading={isLoading}
+            setShowFilter={setShowFilter}
+            data={data}
+            cards={ItemCards}
+            pathname={pathname}
+            onConfirm={(filter) => {
+              getProducts(filter);
+            }}
+          />
         </div>
       </div>
     </section>

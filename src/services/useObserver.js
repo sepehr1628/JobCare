@@ -4,7 +4,6 @@ const useObserver = (threshold) => {
   const [isIntersecting, setIntersecting] = useState(false);
 
   const ref = useRef(null);
-
   const curRef = ref.current;
 
   useEffect(() => {

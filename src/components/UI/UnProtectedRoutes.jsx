@@ -1,32 +1,31 @@
 import { useUser } from "@/services/useUser";
-import { useEffect } from "react";
-import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import { supabase } from "../../../supabase";
 import Spinner from "./Spinner";
+import toast from "react-hot-toast";
+import useAuthStore from "@/stores/useAuthStore";
 
 function UnProtectedRoute({ children }) {
-  const { isLoading, isAuthenticated } = useUser();
+  // const [session, setSession] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
 
-  useEffect(
-    function () {
-      if (isAuthenticated && !isLoading) {
-        navigate(-1);
-        toast.error("Log out first to go to that route");
-      }
-    },
-    [isAuthenticated, isLoading, navigate]
-  );
+  const { accessToken } = useAuthStore();
 
-  if (isLoading)
-    return (
-      <>
-        <Spinner />
-      </>
-    );
+  const { isLoading } = useUser();
 
-  if (!isAuthenticated) return children;
+  useEffect(() => {
+    if (accessToken) {
+      navigate("/panel");
+      toast.error("Please log out first to access this page");
+    }
+  }, [navigate]);
+
+  if (isLoading) return <Spinner />;
+
+  if (!accessToken) return children;
 }
 
 export default UnProtectedRoute;

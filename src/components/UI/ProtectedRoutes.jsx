@@ -1,23 +1,19 @@
-import { useUser } from "@/services/useUser";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import Spinner from "./Spinner";
+import useAuthStore from "@/stores/useAuthStore";
 
 function ProtectedRoute({ children }) {
-  const { isLoading, isAuthenticated } = useUser();
   const navigate = useNavigate();
 
+  const { accessToken } = useAuthStore();
+
   useEffect(() => {
-    if (!isAuthenticated && !isLoading) {
+    if (!accessToken) {
       navigate("/login");
     }
-  }, [isAuthenticated, isLoading, navigate]);
+  }, [navigate, accessToken]);
 
-  if (isLoading) {
-    return <Spinner />;
-  }
-
-  return isAuthenticated ? children : null;
+  return accessToken ? children : null;
 }
 
 export default ProtectedRoute;

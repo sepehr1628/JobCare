@@ -8,17 +8,10 @@ import ReportBarSection from "@/components/pages/Home/ReportBarSection";
 import TrendingserviceSection from "@/components/pages/Home/TrendingserviceSection";
 import { getFreelancers } from "../services/apiFreelancers";
 import { useScrollTop } from "@/services/useScrollTop";
-
-function calculateAverageRate(rateArray) {
-  if (!rateArray || rateArray.length === 0) {
-    return 0;
-  }
-  const sum = rateArray.reduce((acc, rate) => acc + rate, 0);
-  return sum / rateArray.length;
-}
+import { handleRate } from "@/services/handleAverageRate";
 
 function Home() {
-  const { data, error } = useQuery({
+  const { data } = useQuery({
     queryKey: ["freelancers"],
     queryFn: getFreelancers,
   });
@@ -27,7 +20,7 @@ function Home() {
 
   const freelancersWithAverageRate = data?.map((freelancer) => ({
     ...freelancer,
-    averageRate: calculateAverageRate(freelancer.rate),
+    averageRate: handleRate(freelancer.rate),
   }));
 
   const sortedFreelancers = freelancersWithAverageRate?.sort(

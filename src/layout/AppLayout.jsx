@@ -2,10 +2,9 @@ import { Outlet, useLocation } from "react-router";
 import Header from "@/components/Common/Header";
 import Footer from "@/components/Common/Footer";
 import { useState } from "react";
-import SignUpForm from "@/components/forms/SignUpForm";
 
 function AppLayout() {
-  const [signUp, setSignUp] = useState(false);
+  const [signUp] = useState(false);
   const route = useLocation().pathname.slice(1);
 
   return (

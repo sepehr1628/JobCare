@@ -54,12 +54,6 @@ function FixedMenu({ isMenuOpen, setSignUp, setIsMenuOpen }) {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/educations" className="flex gap-1 items-center">
-              <HiOutlineBookOpen />
-              Educations
-            </NavLink>
-          </li>
-          <li>
             <NavLink to="/projects" className="flex gap-1 items-center">
               <PiProjectorScreen />
               Projects

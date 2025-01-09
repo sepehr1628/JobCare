@@ -1,7 +1,7 @@
 import useObserver from "@/services/useObserver";
 import { HiOutlineSearch } from "react-icons/hi";
 
-function HeroSection(darkMode) {
+function HeroSection() {
   const [ref, isObserved] = useObserver(true);
   return (
     <section className="bg-gray dark:bg-gray-900 w-full pt-24 px-4 md:px-24 flex flex-col items-end md:flex-row relative md:space-x-3">
@@ -41,7 +41,9 @@ function HeroSection(darkMode) {
             />
           </span>
           <button
-            className={`px-4 md:px-6 py-2 sm:w-auto rounded-full sm:rounded-l-none sm:rounded-r-full flex max-w-52 w-52 justify-center items-center bg-blue-900 text-white animate__animated `}
+            className={`px-4 md:px-6 py-2 sm:w-auto rounded-full sm:rounded-l-none sm:rounded-r-full flex max-w-52 w-52 justify-center items-center bg-blue-900 text-white animate__animated ${
+              isObserved ? "animate__fadeInLeftBig animate__delay-3s" : ""
+            }`}
           >
             <HiOutlineSearch className="me-2" />
             Search

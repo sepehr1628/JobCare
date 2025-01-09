@@ -23,6 +23,5 @@ export async function getFreelancers({ sorting }) {
   if (error) {
     throw new Error("Projects could not be loaded!");
   }
-
   return data;
 }

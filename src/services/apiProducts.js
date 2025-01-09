@@ -1,6 +1,6 @@
 import { supabase } from "../../supabase";
 
-export async function getProducts({ sorting }) {
+export async function getProducts({ sorting, filtering }) {
   const sortConfig = {
     "a-z": { column: "name", ascending: true },
     "high-price": { column: "price", ascending: false },
