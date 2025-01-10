@@ -6,6 +6,7 @@ export async function getProducts({ sorting, filtering }) {
     "high-price": { column: "price", ascending: false },
     "low-price": { column: "price", ascending: true },
   };
+
   let query = supabase
     .from("products")
     .select("*")

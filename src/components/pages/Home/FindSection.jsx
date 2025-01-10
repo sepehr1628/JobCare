@@ -61,7 +61,7 @@ function HeroSection() {
             }`}
           >
             <img
-              src="./../../assets/Images/linkedin-logo.png"
+              src="/Images/linkedin-logo.png"
               alt="JobCare LinkedIn"
               className="h-3/5 w-3/5 rounded"
             />
@@ -74,7 +74,7 @@ function HeroSection() {
             }`}
           >
             <img
-              src="./../../assets/Images/telegram-logo.png"
+              src="/Images/telegram-logo.png"
               alt="JobCare Telegram"
               className="h-3/5 w-3/5 rounded"
             />
@@ -87,7 +87,7 @@ function HeroSection() {
             }`}
           >
             <img
-              src="./../../assets/Images/github-logo.png"
+              src="/Images/github-logo.png"
               alt="JobCare Github"
               className="h-3/5 w-3/5 rounded"
             />
@@ -95,7 +95,7 @@ function HeroSection() {
         </div>
         <div className="w-2/3 flex justify-center">
           <img
-            src="./../../assets/Images/image 14.png"
+            src="/Images/image 14.png"
             alt="The guy finds job in JobCare"
             className="xl:w-4/5"
           />

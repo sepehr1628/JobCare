@@ -71,7 +71,7 @@ function ProductDetail() {
             <p className="flex items-center gap-2">
               <span>
                 <img
-                  src="./../../assets/Images/star.svg"
+                  src="/Images/star.svg"
                   alt="rating star image"
                   className="w-5"
                 />

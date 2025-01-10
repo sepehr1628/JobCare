@@ -40,10 +40,7 @@ function TrendingserviceSection() {
       >
         <SwiperSlide className="flex flex-col shadow-lg dark:bg-[#9a9a9a]">
           <div>
-            <img
-              src="./../../assets/Images/course-poster.png"
-              alt="course description"
-            />
+            <img src="/Images/course-poster.png" alt="course description" />
           </div>
           <div className="flex flex-col gap-3 py-2 px-3">
             <p className="text-slate-700 text-sm font-medium">
@@ -74,7 +71,7 @@ function TrendingserviceSection() {
             <div className="flex justify-between items-center p-2 border-t border-gray border-solid">
               <div className="flex items-center gap-2">
                 <img
-                  src="./../../assets/Images/teacher-picture.png"
+                  src="/Images/teacher-picture.png"
                   alt="course teacher picture"
                   className="w-10"
                 />
@@ -87,10 +84,7 @@ function TrendingserviceSection() {
 
         <SwiperSlide className="flex flex-col shadow-lg dark:bg-[#9a9a9a]">
           <div>
-            <img
-              src="./../../assets/Images/course-poster.png"
-              alt="course description"
-            />
+            <img src="/Images/course-poster.png" alt="course description" />
           </div>
           <div className="flex flex-col gap-3 py-2 px-3">
             <p className="text-slate-700 text-sm font-medium">
@@ -121,7 +115,7 @@ function TrendingserviceSection() {
             <div className="flex justify-between items-center p-2 border-t border-gray border-solid">
               <div className="flex items-center gap-2">
                 <img
-                  src="./../../assets/Images/teacher-picture.png"
+                  src="/Images/teacher-picture.png"
                   alt="course teacher picture"
                   className="w-10"
                 />
@@ -134,10 +128,7 @@ function TrendingserviceSection() {
 
         <SwiperSlide className="flex flex-col shadow-lg dark:bg-[#9a9a9a]">
           <div>
-            <img
-              src="./../../assets/Images/course-poster.png"
-              alt="course description"
-            />
+            <img src="/Images/course-poster.png" alt="course description" />
           </div>
           <div className="flex flex-col gap-3 py-2 px-3">
             <p className="text-slate-700 text-sm font-medium">
@@ -168,7 +159,7 @@ function TrendingserviceSection() {
             <div className="flex justify-between items-center p-2 border-t border-gray border-solid">
               <div className="flex items-center gap-2">
                 <img
-                  src="./../../assets/Images/teacher-picture.png"
+                  src="/Images/teacher-picture.png"
                   alt="course teacher picture"
                   className="w-10"
                 />
@@ -181,10 +172,7 @@ function TrendingserviceSection() {
 
         <SwiperSlide className="flex flex-col shadow-lg dark:bg-[#9a9a9a]">
           <div>
-            <img
-              src="./../../assets/Images/course-poster.png"
-              alt="course description"
-            />
+            <img src="/Images/course-poster.png" alt="course description" />
           </div>
           <div className="flex flex-col gap-3 py-2 px-3">
             <p className="text-slate-700 text-sm font-medium">
@@ -215,7 +203,7 @@ function TrendingserviceSection() {
             <div className="flex justify-between items-center p-2 border-t border-gray border-solid">
               <div className="flex items-center gap-2">
                 <img
-                  src="./../../assets/Images/teacher-picture.png"
+                  src="/Images/teacher-picture.png"
                   alt="course teacher picture"
                   className="w-10"
                 />
@@ -228,10 +216,7 @@ function TrendingserviceSection() {
 
         <SwiperSlide className="flex flex-col shadow-lg dark:bg-[#9a9a9a]">
           <div>
-            <img
-              src="./../../assets/Images/course-poster.png"
-              alt="course description"
-            />
+            <img src="/Images/course-poster.png" alt="course description" />
           </div>
           <div className="flex flex-col gap-3 py-2 px-3">
             <p className="text-slate-700 text-sm font-medium">
@@ -262,7 +247,7 @@ function TrendingserviceSection() {
             <div className="flex justify-between items-center p-2 border-t border-gray border-solid">
               <div className="flex items-center gap-2">
                 <img
-                  src="./../../assets/Images/teacher-picture.png"
+                  src="/Images/teacher-picture.png"
                   alt="course teacher picture"
                   className="w-10"
                 />

@@ -36,7 +36,7 @@ function ResultsHeader({ setShowFilter, data }) {
         </select>
         <span className="xlg:hidden">
           <img
-            src="./../../assets/Images/filter-mobile.png"
+            src="/Images/filter-mobile.png"
             alt="filter search"
             className="rotate-90"
             onClick={handleClick}

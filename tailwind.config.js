@@ -13,7 +13,7 @@ export default {
       },
       animation: { fade: "fade 3s ease-in-out forwards" },
       backgroundImage: {
-        breadcrumb: "url(./assets/Images/breadcrumb-bg.png)",
+        breadcrumb: "url(/Images/breadcrumb-bg.png)",
       },
       colors: {
         black: "#000",

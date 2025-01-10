@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { handleRate } from "../../services/handleAverageRate";
 function FreelancerCard({ item, freelancer }) {
@@ -20,7 +18,7 @@ function FreelancerCard({ item, freelancer }) {
       <div className="flex flex-wrap gap-2 justify-center text-xs">
         <span>
           <img
-            src="./../../assets/Images/star.svg"
+            src="/Images/star.svg"
             alt="star rating number"
             className="w-3"
           />

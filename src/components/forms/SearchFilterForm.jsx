@@ -24,19 +24,21 @@ function SearchFilterForm({ filterItems, isLoading }) {
 
     const firstFilterPart = formData.getAll(keys[0]);
     const secondFilterPart = formData.getAll(keys[1]);
+    const priceRange = formData.get("price-range");
 
-    const newSearchParams = new URLSearchParams();
-    console.log(newSearchParams);
-
+    const queryParts = [];
+    queryParts.push(`price-range=${priceRange}`);
     if (firstFilterPart.length > 0) {
-      newSearchParams.set(keys[0], firstFilterPart.join(","));
+      queryParts.push(`${keys[0]}=${firstFilterPart.join(",")}`);
+    }
+    if (secondFilterPart.length > 0) {
+      queryParts.push(`${keys[1]}=${secondFilterPart.join(",")}`);
     }
 
-    if (secondFilterPart.length > 0) {
-      newSearchParams.set(keys[1], secondFilterPart.join(","));
-    }
-    const decodedParams = decodeURIComponent(newSearchParams.toString());
-    setFilterURL(decodedParams);
+    const rawQueryString = queryParts.join("&");
+    const newUrl = `${window.location.pathname}?${rawQueryString}`;
+
+    window.history.replaceState({}, "", newUrl);
   }
 
   return (
@@ -69,7 +71,9 @@ function SearchFilterForm({ filterItems, isLoading }) {
         />
       </div>
       <div className="my-4 [&>button]:border [&>button]:border-slate-500 [&>button]:border-solid [&>button]:px-4 [&>button]:py-1 [&>button]:rounded-full flex justify-evenly">
-        <button type="reset">Delete</button>
+        <button type="reset" onClick={() => console.log(1)}>
+          Delete
+        </button>
         <button type="submit" disabled={isLoading}>
           Filter
         </button>

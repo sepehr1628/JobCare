@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Filter from "../features/shop/Filter";
 import BreadCrumb from "@/components/UI/BreadCrumb";
 import Results from "../features/shop/Results";
@@ -12,20 +12,22 @@ import FreelancerCard from "../features/freelancers/FreelancerCard";
 import ProjectCard from "../features/projects/ProjectCard";
 import ResultsHeader from "../features/shop/ResultsHeader";
 import { useScrollTop } from "@/services/useScrollTop";
+import useFilterStore from "@/stores/useFilterStore";
 
 function Market() {
   const [showFilter, setShowFilter] = useState(false);
   const [filter, setFilter] = useState({});
 
-  const [url] = useSearchParams();
-  const sorting = url.get("sort");
-  const brand = url.getAll("brand");
-  console.log(brand);
+  const [searchParams] = useSearchParams();
+  const sorting = searchParams.get("sort");
 
   const location = useLocation();
   const pathname = location.pathname;
 
   useScrollTop();
+
+  // const { marketFilters, freelancerFilters, projectFilters, filterSubjects } =
+  useFilterStore();
 
   const marketFilters = {
     brand: ["Asus", "Apple", "Acer", "HP", "Lenovo"],
@@ -39,7 +41,6 @@ function Market() {
     level: ["beginner", "Intemediate", "Advanced"],
     category: ["Seo", "Back-end", "DevOps", "Web design", "Network Marketing"],
   };
-
   const map = {
     market: marketFilters,
     freelancers: freelancerFilters,
@@ -66,6 +67,23 @@ function Market() {
     staleTime: 0,
     cacheTime: 0,
   });
+
+  const priceRange = searchParams.get("price-range");
+  const skills = searchParams.get("skills");
+  const level = searchParams.get("level");
+  const brand = searchParams.get("brand");
+  const category = searchParams.get("category");
+
+  useEffect(() => {
+    console.log(1);
+    setFilter({
+      brand,
+      level,
+      category,
+      skills,
+      priceRange,
+    });
+  }, [brand, level, category, skills, priceRange]);
 
   return (
     <section className={`${showFilter ? "overflow-hidden" : "overflow-auto"}`}>

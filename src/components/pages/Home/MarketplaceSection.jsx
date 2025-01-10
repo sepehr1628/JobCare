@@ -15,7 +15,7 @@ function MarketplaceSection() {
       >
         <img
           className="xlg:h-[400px]"
-          src="./../../assets/Images/image 26.png"
+          src="/Images/image 26.png"
           alt="Join World's Best Marketplace for Workers"
         />
       </div>

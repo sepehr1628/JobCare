@@ -26,7 +26,7 @@ function JobCategories() {
           }`}
         >
           <img
-            src="./../../assets/Images/web-design.svg"
+            src="/Images/web-design.svg"
             alt="web design projects in JobCare platform"
             className="w-10"
           />
@@ -40,7 +40,7 @@ function JobCategories() {
           }`}
         >
           <img
-            src="./../../assets/Images/web-development.svg"
+            src="/Images/web-development.svg"
             alt="web development projects in JobCare platform"
             className="w-10"
           />
@@ -54,7 +54,7 @@ function JobCategories() {
           }`}
         >
           <img
-            src="./../../assets/Images/online-advertising.svg"
+            src="/Images/online-advertising.svg"
             alt="digital marketing in JobCare platform"
             className="w-10"
           />
@@ -68,7 +68,7 @@ function JobCategories() {
           }`}
         >
           <img
-            src="./../../assets/Images/microphone.svg"
+            src="/Images/microphone.svg"
             alt="music and audio in JobCare platform"
             className="w-10"
           />

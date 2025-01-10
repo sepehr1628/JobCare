@@ -64,7 +64,7 @@ function Header({ type }) {
           <SigninButton type="mdDisplay" setIsMenuOpen={setIsMenuOpen} />
         ) : (
           <button
-            onClick={() => navigate("/panel")}
+            onClick={() => navigate("/dashboard")}
             className="px-6 py-2 bg-[#1F69DC] transition-all duration-300  text-slate-50 hover:bg-[#1f3bdc] dark:bg-blue-900 rounded-3xl hidden xlg:block px-8 py-2"
           >
             Dashboard

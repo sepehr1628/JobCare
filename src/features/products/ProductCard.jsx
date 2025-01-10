@@ -20,7 +20,7 @@ function ProductCard({ item }) {
           <b>${item.price}</b>
           <div className="flex gap-2 rounded-full bg-[#FAEAB9] flex-shrink-0 flex-grow-0 text-xs p-1 text-[#C69709]">
             <img
-              src="./../../assets/Images/star.svg"
+              src="/Images/star.svg"
               alt={`${item.name} rating number`}
               className="w-3"
             />
