@@ -22,16 +22,23 @@ function SearchFilterForm({ filterItems, isLoading, setShowFilter }) {
     setShowFilter(false);
 
     const firstFilterPart = formData.getAll(keys[0]);
+    console.log(firstFilterPart.map);
     const secondFilterPart = formData.getAll(keys[1]);
-    const priceRange = formData.get("price-range");
 
     const queryParts = [];
-    queryParts.push(`price-range=${priceRange}`);
     if (firstFilterPart.length > 0) {
-      queryParts.push(`${keys[0]}=${firstFilterPart.join(",")}`);
+      queryParts.push(
+        `${keys[0].toLowerCase()}=${firstFilterPart
+          .map((el) => el.toLowerCase())
+          .join(",")}`
+      );
     }
     if (secondFilterPart.length > 0) {
-      queryParts.push(`${keys[1]}=${secondFilterPart.join(",")}`);
+      queryParts.push(
+        `${keys[1].toLowerCase()}=${secondFilterPart
+          .map((el) => el.toLowerCase())
+          .join(",")}`
+      );
     }
 
     const rawQueryString = queryParts.join("&");
@@ -59,22 +66,12 @@ function SearchFilterForm({ filterItems, isLoading, setShowFilter }) {
         </ul>
       </div>
 
-      <div>
-        <p className="mt-4 mb-2 font-medium">Price Range</p>
-        <input
-          type="range"
-          name="price-range"
-          className="w-full outline-none h-[0.35rem]"
-          min="0"
-          max="5000"
-        />
-      </div>
-      <div className="my-4 [&>button]:border [&>button]:border-slate-500 [&>button]:border-solid [&>button]:px-4 [&>button]:py-1 [&>button]:rounded-full flex justify-evenly">
-        <button type="reset" onClick={() => console.log(1)}>
-          Delete
-        </button>
+      <div className="my-4 [&>button]:border [&>button]:border-slate-500 [&>button]:border-solid [&>button]:px-4 [&>button]:py-1 [&>button]:rounded-full flex flex-wrap justify-evenly gap-2">
         <button type="submit" disabled={isLoading}>
           Filter
+        </button>
+        <button type="reset" onClick={() => console.log(1)}>
+          Delete
         </button>
       </div>
     </form>

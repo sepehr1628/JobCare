@@ -1,6 +1,6 @@
 import { supabase } from "../../supabase";
 
-export async function getProducts({ sorting, filter }) {
+export async function getProducts({ sorting, search }) {
   const sortConfig = {
     "a-z": { column: "name", ascending: true },
     "high-price": { column: "price", ascending: false },
@@ -9,14 +9,20 @@ export async function getProducts({ sorting, filter }) {
 
   let query = supabase.from("products").select("*").range(0, 9);
 
-  if (filter && Object.keys(filter).length) {
-    Object.entries(filter).forEach(([key, values]) => {
-      if (values?.length) {
-        query = query.in(key, values);
+  // Apply filters dynamically
+  if (search) {
+    Object.entries(search).forEach(([column, values]) => {
+      if (Array.isArray(values)) {
+        if (values.length === 1) {
+          query = query.eq(column, values[0]); // Single value
+        } else {
+          query = query.in(column, values); // Multiple values
+        }
       }
     });
   }
 
+  // Apply sorting
   if (sorting) {
     const sortOption = sortConfig[sorting];
     if (sortOption) {
@@ -27,6 +33,7 @@ export async function getProducts({ sorting, filter }) {
   }
 
   const { data, error } = await query;
+
   if (error) {
     console.error(error);
     throw new Error("Failed to fetch products!");
