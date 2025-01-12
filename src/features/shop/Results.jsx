@@ -1,9 +1,7 @@
 import ProductCardSkeleton from "../products/ProductCardSkeleon";
 
-function Results({ data, cards, pathname, isLoading }) {
-  const CardComponent = Object.entries(cards).filter(
-    (el) => el[0] === pathname
-  )[0][1];
+function Results({ data, error, card, isLoading }) {
+  const CardComponent = card;
 
   return (
     <>
@@ -22,8 +20,11 @@ function Results({ data, cards, pathname, isLoading }) {
             <ProductCardSkeleton />
           </>
         )}
-        {data &&
-          data.map((item) => <CardComponent item={item} key={item.id} />)}
+        {data
+          ? data.map((item) => <CardComponent item={item} key={item.id} />)
+          : error
+          ? "Something went wrong please try again."
+          : "This item is not available"}
       </div>
       <div className="flex justify-center gap-8 my-4">
         <button>Previous</button>

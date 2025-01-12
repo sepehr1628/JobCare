@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Filter from "../features/shop/Filter";
 import BreadCrumb from "@/components/UI/BreadCrumb";
 import Results from "../features/shop/Results";
@@ -12,7 +12,7 @@ import FreelancerCard from "../features/freelancers/FreelancerCard";
 import ProjectCard from "../features/projects/ProjectCard";
 import ResultsHeader from "../features/shop/ResultsHeader";
 import { useScrollTop } from "@/services/useScrollTop";
-import useFilterStore from "@/stores/useFilterStore";
+// import useFilterStore from "@/stores/useFilterStore";
 
 function Market() {
   const [showFilter, setShowFilter] = useState(false);
@@ -27,7 +27,7 @@ function Market() {
   useScrollTop();
 
   // const { marketFilters, freelancerFilters, projectFilters, filterSubjects } =
-  useFilterStore();
+  // useFilterStore();
 
   const marketFilters = {
     brand: ["Asus", "Apple", "Acer", "HP", "Lenovo"],
@@ -41,49 +41,65 @@ function Market() {
     level: ["beginner", "Intemediate", "Advanced"],
     category: ["Seo", "Back-end", "DevOps", "Web design", "Network Marketing"],
   };
-  const map = {
-    market: marketFilters,
-    freelancers: freelancerFilters,
-    projects: projectFilters,
+
+  const filtersMap = {
+    "/market": {
+      keys: ["brand", "category"],
+      queryFn: () => getProducts({ sorting, filter }),
+      card: ProductCard,
+      items: marketFilters,
+    },
+    "/freelancers": {
+      keys: ["skills", "level"],
+      queryFn: () => getFreelancers({ sorting, filter }),
+      card: FreelancerCard,
+      items: freelancerFilters,
+    },
+    "/projects": {
+      keys: ["level", "category"],
+      queryFn: () => getProjects({ sorting, filter }),
+      card: ProjectCard,
+      items: projectFilters,
+    },
   };
+  const { keys, queryFn, card, items } = filtersMap[pathname] || {};
 
-  const filterItems = map[pathname.slice(1)];
-
-  const queryFunctions = {
-    "/freelancers": () => getFreelancers({ sorting, filter }),
-    "/market": () => getProducts({ sorting, filter }),
-    "/projects": () => getProjects({ sorting, filter }),
-  };
-
-  const ItemCards = {
-    "/freelancers": FreelancerCard,
-    "/market": ProductCard,
-    "/projects": ProjectCard,
-  };
-
-  const { data, isLoading } = useQuery({
-    queryKey: [pathname, sorting],
-    queryFn: queryFunctions[pathname],
+  const { data, error, isLoading } = useQuery({
+    queryKey: [pathname, sorting, filter],
+    queryFn: queryFn,
     staleTime: 0,
     cacheTime: 0,
   });
-
-  const priceRange = searchParams.get("price-range");
-  const skills = searchParams.get("skills");
-  const level = searchParams.get("level");
-  const brand = searchParams.get("brand");
-  const category = searchParams.get("category");
+  console.log(data);
 
   useEffect(() => {
-    console.log(1);
-    setFilter({
-      brand,
-      level,
-      category,
-      skills,
-      priceRange,
-    });
-  }, [brand, level, category, skills, priceRange]);
+    if (!keys) return;
+
+    // Extract filter values based on the relevant keys for the current page
+    const newFilter = keys.reduce((acc, key) => {
+      const value = searchParams.get(key);
+      if (value) acc[key] = value.toLowerCase().split(",");
+      return acc;
+    }, {});
+    setFilter(newFilter);
+  }, [searchParams]);
+  console.log(filter);
+
+  // const priceRange = searchParams.get("price-range");
+  // const skills = searchParams.get("skills");
+  // const level = searchParams.get("level");
+  // const brand = searchParams.get("brand");
+  // const category = searchParams.get("category");
+
+  // useEffect(() => {
+  //   setFilter({
+  //     brand,
+  //     level,
+  //     category,
+  //     skills,
+  //     priceRange,
+  //   });
+  // }, [brand, level, category, skills, priceRange]);
 
   return (
     <section className={`${showFilter ? "overflow-hidden" : "overflow-auto"}`}>
@@ -92,7 +108,7 @@ function Market() {
         <Filter
           showFilter={showFilter}
           setShowFilter={setShowFilter}
-          filterItems={filterItems}
+          filterItems={items}
           isLoading={isLoading}
           filter={filter}
         />
@@ -102,7 +118,8 @@ function Market() {
             isLoading={isLoading}
             setShowFilter={setShowFilter}
             data={data}
-            cards={ItemCards}
+            error={error}
+            card={card}
             pathname={pathname}
           />
         </div>

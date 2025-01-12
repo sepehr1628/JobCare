@@ -1,10 +1,8 @@
 import FilterListItem from "@/features/shop/FilterListItem";
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router";
-import { useSearchParams } from "react-router-dom";
 
-function SearchFilterForm({ filterItems, isLoading }) {
-  const [_, setFilterURL] = useSearchParams();
+function SearchFilterForm({ filterItems, isLoading, setShowFilter }) {
   const location = useLocation();
   const formRef = useRef(null);
 
@@ -21,6 +19,7 @@ function SearchFilterForm({ filterItems, isLoading }) {
   function handleSubmitFilterForm(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
+    setShowFilter(false);
 
     const firstFilterPart = formData.getAll(keys[0]);
     const secondFilterPart = formData.getAll(keys[1]);

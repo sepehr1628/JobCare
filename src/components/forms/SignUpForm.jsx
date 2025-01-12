@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { supabase } from "../../../supabase";
 import toast from "react-hot-toast";
 import { PiSpinner } from "react-icons/pi";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 import SocialNetworkLogIn from "../UI/SocialNetworkLogIn";
 import useAuthStore from "@/stores/useAuthStore";
 
@@ -11,7 +11,7 @@ function SignUpForm() {
   const [signUpPassword, setSignUpPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const { setAccessToken } = useAuthStore();
 
@@ -26,7 +26,8 @@ function SignUpForm() {
       setAccessToken(data.session.access_token);
       if (data.session.access_token) {
         toast.success("Signed up succesfully 🎉");
-        navigate("/dashboard", { replace: true });
+        redirect("/dashboard");
+        // navigate("/dashboard", { replace: true });
       }
       if (error) throw new Error(error);
     } catch (error) {

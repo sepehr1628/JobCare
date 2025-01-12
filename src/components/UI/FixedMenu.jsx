@@ -1,6 +1,6 @@
 import Logo from "./Logo";
 
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 import { PiReadCvLogo, PiProjectorScreen } from "react-icons/pi";
 import SigninButton from "../Buttons/SigninButton";
@@ -13,17 +13,35 @@ import {
   HiOutlinePhone,
   HiOutlineUserGroup,
 } from "react-icons/hi2";
+import { logout } from "@/authentication/apiAuth";
+// import { useQuery } from "@tanstack/react-query";
 
 function FixedMenu({ isMenuOpen, setSignUp, setIsMenuOpen }) {
   const navigate = useNavigate();
-  const { accessToken } = useAuthStore();
+  const { accessToken, purgeToken } = useAuthStore();
+
+  function handleLogout() {
+    try {
+      // Call the Supabase logout function
+      console.log("logout clicked");
+      logout();
+      // Purge the local token
+      purgeToken();
+
+      // Optionally redirect to login or home page
+      navigate("/login");
+    } catch (error) {
+      console.error("Error during logout:", error.message);
+    }
+  }
+
   return (
     <div
       className={`flex flex-col justify-between xlg:hidden transition duration-300 w-3/5 bg-slate-200 pt-4 pb-4 px-6 sm:w-1/3 h-full fixed top-0 left-0 z-50 ${
         !isMenuOpen ? "-translate-x-full" : "translate-x-0 shadow-3xl"
       }`}
     >
-      <div className="space-y-4">
+      <div className="flex flex-col gap-4">
         <Logo width="50px" />
 
         {!accessToken ? (
@@ -33,12 +51,9 @@ function FixedMenu({ isMenuOpen, setSignUp, setIsMenuOpen }) {
             type="smDisplay"
           />
         ) : (
-          <button
-            onClick={() => navigate("/panel")}
-            className="px-6 py-2 bg-[#1F69DC] transition-all duration-300  text-slate-50 hover:bg-[#1f3bdc] dark:bg-blue-900 rounded-3xl"
-          >
+          <Link className="mt-6" to="/dashboard">
             Dashboard
-          </button>
+          </Link>
         )}
         <ul className="space-y-4 w-full">
           <li>
@@ -84,6 +99,16 @@ function FixedMenu({ isMenuOpen, setSignUp, setIsMenuOpen }) {
             </NavLink>
           </li>
         </ul>
+        {!accessToken ? (
+          ""
+        ) : (
+          <button
+            onClick={handleLogout}
+            className="px-6 py-1 bg-gray-900 transition-all duration-300  text-slate-50 hover:bg-[#444] dark:bg-blue-900 rounded-3xl"
+          >
+            Log Out
+          </button>
+        )}
       </div>
       <p className="text-xs"> &copy; All rights are reserved by sepehr1628</p>
     </div>

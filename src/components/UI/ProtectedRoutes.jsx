@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router";
+import { redirect, useNavigate } from "react-router";
 import useAuthStore from "@/stores/useAuthStore";
 
 function ProtectedRoute({ children }) {
@@ -9,7 +9,9 @@ function ProtectedRoute({ children }) {
 
   useEffect(() => {
     if (!accessToken) {
-      navigate("/dashboard", { replace: true });
+      redirect("/dashboard");
+
+      // navigate("/dashboard", { replace: true });
     }
   }, [navigate, accessToken]);
 

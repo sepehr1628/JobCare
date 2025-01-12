@@ -8,10 +8,10 @@ import { HiOutlineShoppingCart } from "react-icons/hi";
 import { useLocation, useNavigate } from "react-router";
 import SigninButton from "../Buttons/SigninButton";
 import useAuthStore from "@/stores/useAuthStore";
+import useScrollDirection from "@/services/useScrollDirection";
 
 function Header({ type }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const location = useLocation();
 
@@ -20,6 +20,8 @@ function Header({ type }) {
   const navigate = useNavigate();
 
   const { accessToken } = useAuthStore();
+
+  // const isScrollingUp = useScrollDirection();
 
   useEffect(
     function () {
@@ -46,7 +48,7 @@ function Header({ type }) {
     <header
       id="scroll-here"
       ref={myRef}
-      className={`flex justify-between bg-inherit items-center p-4 xlg:px-24 z-10 ${
+      className={`flex justify-between bg-inherit items-center p-4 xlg:px-24 z-10  ${
         type ? "absolute top-0 left-0 right-0" : ""
       }`}
     >
@@ -65,14 +67,13 @@ function Header({ type }) {
         ) : (
           <button
             onClick={() => navigate("/dashboard")}
-            className="px-6 py-2 bg-[#1F69DC] transition-all duration-300  text-slate-50 hover:bg-[#1f3bdc] dark:bg-blue-900 rounded-3xl hidden xlg:block px-8 py-2"
+            className="px-6 py-2 bg-[#1F69DC] transition-all duration-300  text-slate-50 hover:bg-[#1f3bdc] dark:bg-blue-900 rounded-3xl hidden xlg:block"
           >
             Dashboard
           </button>
         )}
       </div>
       <FixedMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-
       <button
         className="xlg:hidden"
         onClick={() => setIsMenuOpen((status) => !status)}

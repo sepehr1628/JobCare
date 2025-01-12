@@ -20,7 +20,11 @@ function Filter({ filterItems, showFilter, setShowFilter, isLoading }) {
           </span>
         )}
       </div>
-      <SearchFilterForm isLoading={isLoading} filterItems={filterItems} />
+      <SearchFilterForm
+        isLoading={isLoading}
+        filterItems={filterItems}
+        setShowFilter={setShowFilter}
+      />
     </aside>
   );
 }
