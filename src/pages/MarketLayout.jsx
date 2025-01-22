@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Filter from "../features/shop/Filter";
 import BreadCrumb from "@/components/UI/BreadCrumb";
 import Results from "../features/shop/Results";

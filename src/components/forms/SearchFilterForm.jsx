@@ -1,9 +1,9 @@
 import FilterListItem from "@/features/shop/FilterListItem";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 
 function SearchFilterForm({ filterItems, isLoading, setShowFilter }) {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [_, setSearchParams] = useSearchParams();
   const formRef = useRef(null);
 
   const keys = Object.keys(filterItems);

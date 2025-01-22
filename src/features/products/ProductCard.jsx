@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { handleRate } from "../../services/handleAverageRate";
 
-function ProductCard({ item }) {
+function ProductCard({ item, fn }) {
   const { rateAverage } = handleRate(item.rate);
 
   return (
@@ -35,12 +35,13 @@ function ProductCard({ item }) {
         <p className="truncated_text">{item.description}</p>
 
         <button
-          // disabled={!availablity}
+          disabled={!item.isAvailable}
           className={`${
             item.isAvailable === true
               ? "bg-blue text-white hover:bg-white hover:text-blue"
               : "bg-white"
           } transition-all duration-300 mt-4 mb-2 md:m-auto px-3 py-1 lg:py-2 rounded-full border w-4/5 m-auto border-blue border-solid flex items-center justify-center gap-2`}
+          onClick={fn}
         >
           {item.isAvailable === true ? "Add To Cart" : "Out of stock"}
         </button>

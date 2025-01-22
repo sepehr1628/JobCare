@@ -1,6 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { Link, redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { supabase } from "../../../supabase";
 import { PiSpinner } from "react-icons/pi";
 import SocialNetworkLogIn from "../UI/SocialNetworkLogIn";
@@ -10,8 +10,6 @@ function LogInForm() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [isLoading, setIsLoading] = useState();
-
-  // const navigate = useNavigate();
 
   const { setAccessToken } = useAuthStore();
 
@@ -23,18 +21,10 @@ function LogInForm() {
         email: loginEmail,
         password: loginPassword,
       });
-      setAccessToken(data.session.access_token);
       if (error) throw new Error(error.message);
       if (data.session.access_token) {
-        if (data.session.access_token) {
-          toast.success("Welcome Back🎉");
-          redirect("/dashboard");
-          // navigate("/dashboard", { replace: true });
-        } else {
-          throw new Error(
-            "Something went wrong with your login. Please try again."
-          );
-        }
+        setAccessToken(data.session.access_token);
+        toast.success("Welcome Back🎉");
       }
     } catch (error) {
       toast.error(error.message);

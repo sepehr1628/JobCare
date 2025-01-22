@@ -21,18 +21,9 @@ function FixedMenu({ isMenuOpen, setSignUp, setIsMenuOpen }) {
   const { accessToken, purgeToken } = useAuthStore();
 
   function handleLogout() {
-    try {
-      // Call the Supabase logout function
-      console.log("logout clicked");
-      logout();
-      // Purge the local token
-      purgeToken();
-
-      // Optionally redirect to login or home page
-      navigate("/login");
-    } catch (error) {
-      console.error("Error during logout:", error.message);
-    }
+    logout();
+    purgeToken();
+    navigate("/login");
   }
 
   return (
