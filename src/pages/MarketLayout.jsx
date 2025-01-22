@@ -23,20 +23,14 @@ function Market() {
   const sorting = searchParams.get("sort");
 
   useEffect(() => {
-    // Parse `location.search` and update `search` state
     const params = new URLSearchParams(location.search);
-    const entries = Array.from(params.entries()); // [['brand', 'acer'], ['category', 'laptop']]
+    const entries = Array.from(params.entries());
     const parsedSearch = entries.reduce((acc, [key, value]) => {
-      if (key !== "sort") acc[key] = value.split(","); // Handle multi-select filters
-      return acc;
-    }, {}); // { brand: ['acer'], category: ['laptop'] }
-    setSearch(parsedSearch); // Update state with new search params
-    console.log(parsedSearch);
-  }, [location.search]); // Re-run when `location.search` changes
-
-  console.log("Updated Search:", search);
-
-  console.log(search);
+      if (key !== "sort") acc[key] = value.split(",");
+      return { ...acc };
+    }, {});
+    setSearch(parsedSearch);
+  }, [location.search]);
 
   const pathname = location.pathname;
 
@@ -77,29 +71,12 @@ function Market() {
   };
   const { queryFn, card, items } = filtersMap[pathname] || {};
 
-  console.log("queryFn: ", queryFn);
-  console.log("queryKey: ", [pathname, sorting, search]);
-
   const { data, error, isLoading } = useQuery({
-    queryKey: [pathname, sorting, search],
+    queryKey: [pathname, sorting, JSON.stringify(search)],
     queryFn: queryFn,
     staleTime: 0,
     cacheTime: 0,
   });
-  console.log(data);
-
-  // useEffect(() => {
-  //   if (!keys) return;
-
-  //   // Extract filter values based on the relevant keys for the current page
-  //   const newFilter = keys.reduce((acc, key) => {
-  //     const value = searchParams.get(key);
-  //     if (value) acc[key] = value.toLowerCase().split(",");
-  //     return acc;
-  //   }, {});
-  //   setFilter(newFilter);
-  // }, [searchParams]);
-  console.log(search);
 
   return (
     <section className={`${showFilter ? "overflow-hidden" : "overflow-auto"}`}>

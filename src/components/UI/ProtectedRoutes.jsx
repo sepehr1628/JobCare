@@ -3,7 +3,7 @@ import { redirect, useNavigate } from "react-router";
 import useAuthStore from "@/stores/useAuthStore";
 
 function ProtectedRoute({ children }) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const { accessToken } = useAuthStore();
 
@@ -13,7 +13,7 @@ function ProtectedRoute({ children }) {
 
       // navigate("/dashboard", { replace: true });
     }
-  }, [navigate, accessToken]);
+  }, [accessToken]);
 
   return accessToken ? children : null;
 }

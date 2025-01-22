@@ -7,7 +7,7 @@ function NotFound() {
       <div className="absolute right-1/2 translate-x-1/2 flex flex-col justify-center items-center gap-3">
         <img
           className="w-80 md:w-1/2"
-          src="/images/error-404 (2).png"
+          src="/public/Images/error-404 (2).png"
           alt="Page not found"
         />
         <p className="text-white sm:text-lg md:text-2xl font-semibold">

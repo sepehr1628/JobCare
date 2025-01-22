@@ -1,9 +1,9 @@
 import FilterListItem from "@/features/shop/FilterListItem";
-import { useEffect, useRef } from "react";
-import { useLocation } from "react-router";
+import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 function SearchFilterForm({ filterItems, isLoading, setShowFilter }) {
-  const location = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
   const formRef = useRef(null);
 
   const keys = Object.keys(filterItems);
@@ -22,7 +22,6 @@ function SearchFilterForm({ filterItems, isLoading, setShowFilter }) {
     setShowFilter(false);
 
     const firstFilterPart = formData.getAll(keys[0]);
-    console.log(firstFilterPart.map);
     const secondFilterPart = formData.getAll(keys[1]);
 
     const queryParts = [];
@@ -43,8 +42,13 @@ function SearchFilterForm({ filterItems, isLoading, setShowFilter }) {
 
     const rawQueryString = queryParts.join("&");
     const newUrl = `${window.location.pathname}?${rawQueryString}`;
-
+    if (!rawQueryString) return;
     window.history.replaceState({}, "", newUrl);
+    setSearchParams(new URLSearchParams(rawQueryString)); // Notify React Router.
+  }
+
+  function handleDeleteFilterForm() {
+    setSearchParams({});
   }
 
   return (
@@ -53,7 +57,7 @@ function SearchFilterForm({ filterItems, isLoading, setShowFilter }) {
         <p className="mt-4 mb-2 font-medium">{keys[0]}</p>
         <ul className="[&>li]:flex flex xlg:flex-col gap-4 xlg:gap-1 flex-wrap [&>li]:gap-4">
           {values[0].map((el, i) => (
-            <FilterListItem key={i} name={keys[0]} inputLabel={el} value={el} />
+            <FilterListItem key={i} name={keys[0]} inputLabel={el} />
           ))}
         </ul>
       </div>
@@ -70,9 +74,7 @@ function SearchFilterForm({ filterItems, isLoading, setShowFilter }) {
         <button type="submit" disabled={isLoading}>
           Filter
         </button>
-        <button type="reset" onClick={() => console.log(1)}>
-          Delete
-        </button>
+        <button onClick={handleDeleteFilterForm}>Delete</button>
       </div>
     </form>
   );
