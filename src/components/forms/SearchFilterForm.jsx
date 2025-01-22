@@ -48,7 +48,7 @@ function SearchFilterForm({ filterItems, isLoading, setShowFilter }) {
   }
 
   function handleDeleteFilterForm() {
-    setSearchParams({});
+    setSearchParams("");
   }
 
   return (
